@@ -1,0 +1,27 @@
+@import 'variables/variables.css';
+@import 'reset.css';
+@import 'theme.css';
+
+.app {
+	font: var(--font-m);
+	min-height: 100vh;
+	height: 100vh;
+
+	color: var(--color-text);
+	background-color: var(--color-bg-app);
+}
+
+.content-page {
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+.page-wrapper {
+	padding: var(--app-padding);
+	background: var(--color-bg);
+
+	/* тень по нижней границе */
+	margin: 7px 0 0 10px;
+	border-radius: var(--app-border-radius);
+	box-shadow: -5px -5px 5px -5px var(--color-shadow);
+}

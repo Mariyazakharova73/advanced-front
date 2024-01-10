@@ -1,0 +1,12 @@
+.AppLink {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.primary {
+  color: var(--color-link);
+}
+
+.secondary {
+  color: var(--color-link-secondary);
+}
