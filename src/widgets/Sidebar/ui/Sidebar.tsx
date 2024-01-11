@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { ReactComponent as ArrowLeft } from 'shared/assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'shared/assets/icons/arrow-right.svg';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
+import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import s from './Sidebar.module.css';
 
@@ -21,9 +22,9 @@ const Sidebar: FC<SidebarProps> = props => {
 		<div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
 			<div>fff</div>
 			<div className={s.buttons}>
-				<div className={s.switchers}>
+				<div className={collapsed ? s.switchersCol : s.switchers}>
 					<ThemeSwitcher />
-					<ThemeSwitcher />
+					<LanguageSwitcher />
 				</div>
 				<div className={s.wrapper}>
 					<Button theme={ThemeButton.CLEAR} onClick={onToggle}>

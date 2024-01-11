@@ -1,5 +1,5 @@
 .Sidebar {
-	height: calc(100vh - var(--navbar-height));
+	height: calc(100vh - var(--navbar-height) - 14px);
 	width: var(--sidebar-width);
 	background: var(--color-primary);
 	/* position: relative; */
@@ -21,6 +21,11 @@
 
 .switchers {
 	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.switchersCol {
+	grid-template-columns: 1fr;
 }
 
 .wrapper {
