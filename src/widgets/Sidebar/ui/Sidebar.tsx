@@ -8,32 +8,32 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import s from './Sidebar.module.css';
 
 export interface SidebarProps {
-	className?: string;
+  className?: string;
 }
 
 const Sidebar: FC<SidebarProps> = props => {
-	const [collapsed, setCollapsed] = useState<boolean>(false);
-	const { className } = props;
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const { className } = props;
 
-	const onToggle = () => {
-		setCollapsed(prev => !prev);
-	};
-	return (
-		<div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
-			<div>fff</div>
-			<div className={s.buttons}>
-				<div className={collapsed ? s.switchersCol : s.switchers}>
-					<ThemeSwitcher />
-					<LanguageSwitcher />
-				</div>
-				<div className={s.wrapper}>
-					<Button theme={ThemeButton.CLEAR} onClick={onToggle}>
-						{collapsed ? <ArrowRight /> : <ArrowLeft />}
-					</Button>
-				</div>
-			</div>
-		</div>
-	);
+  const onToggle = () => {
+    setCollapsed(prev => !prev);
+  };
+  return (
+    <div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
+      <div>fff</div>
+      <div className={s.buttons}>
+        <div className={collapsed ? s.switchersCol : s.switchers}>
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+        </div>
+        <div className={s.wrapper}>
+          <Button theme={ThemeButton.ICON} onClick={onToggle}>
+            {collapsed ? <ArrowRight /> : <ArrowLeft />}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Sidebar;

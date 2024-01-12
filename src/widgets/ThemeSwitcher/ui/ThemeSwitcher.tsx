@@ -5,21 +5,21 @@ import Button, { ThemeButton } from 'shared/ui/Button/Button';
 import s from './ThemeSwitcher.module.css';
 
 export interface ThemeSwitcherProps {
-	className?: string;
+  className?: string;
 }
 
 const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
-	const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
-	return (
-		<Button
-			className={cn(s.ThemeSwitcher, className)}
-			theme={ThemeButton.CLEAR}
-			onClick={toggleTheme}
-		>
-			<BrushIcon />
-		</Button>
-	);
+  return (
+    <Button
+      className={cn(s.ThemeSwitcher, className)}
+      theme={ThemeButton.ICON}
+      onClick={toggleTheme}
+    >
+      <BrushIcon />
+    </Button>
+  );
 };
 
 export default ThemeSwitcher;

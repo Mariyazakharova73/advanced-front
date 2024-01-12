@@ -16,7 +16,6 @@
 }
 
 .links {
-	border: 1px solid red;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 10px;

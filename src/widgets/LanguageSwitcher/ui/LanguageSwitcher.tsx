@@ -1,29 +1,29 @@
-import cn from 'classnames';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LanguageIcon } from 'shared/assets/icons/language.svg';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
-import s from './LanguageSwitcher.module.css';
-
+import cn from 'classnames';
 export interface LanguageSwitcherProps {
-	className?: string;
+  className?: string;
 }
 
 const LanguageSwitcher: FC<LanguageSwitcherProps> = props => {
-	const { className } = props;
-	const { i18n } = useTranslation();
+  const { className } = props;
+  const { i18n } = useTranslation();
 
-	const toggleLanguage = async () => {
-		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-	};
+  const toggleLanguage = async () => {
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+  };
 
-	return (
-		<div className={cn(s.LanguageSwitcher, className)}>
-			<Button onClick={toggleLanguage} theme={ThemeButton.CLEAR}>
-				<LanguageIcon />
-			</Button>
-		</div>
-	);
+  return (
+    <Button
+      className={cn(className)}
+      onClick={toggleLanguage}
+      theme={ThemeButton.ICON}
+    >
+      <LanguageIcon />
+    </Button>
+  );
 };
 
 export default LanguageSwitcher;
