@@ -1,11 +1,12 @@
 .Sidebar {
-	height: calc(100vh - var(--navbar-height) - 14px);
+	height: calc(100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin));
 	width: var(--sidebar-width);
 	background: var(--color-primary);
+
 	/* position: relative; */
 
-	/* тень справа  и сверху*/
-	margin: 7px 7px 0 0;
+	/* тень справа  и сверху */
+	margin: var(--app-margin) var(--app-margin) 0 0;
 	border-radius: var(--app-border-radius);
 	box-shadow: 5px -5px 5px -5px var(--color-shadow);
 	padding: var(--app-padding);

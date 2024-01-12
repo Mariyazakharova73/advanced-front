@@ -2,7 +2,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import cn from 'classnames';
 import { ReactComponent as BrushIcon } from 'shared/assets/icons/brush.svg';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
-import s from './ThemeSwitcher.module.css';
 
 export interface ThemeSwitcherProps {
   className?: string;
@@ -13,7 +12,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
   return (
     <Button
-      className={cn(s.ThemeSwitcher, className)}
+      className={cn(className)}
       theme={ThemeButton.ICON}
       onClick={toggleTheme}
     >

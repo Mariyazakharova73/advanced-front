@@ -3,14 +3,13 @@
 	--color-success: #52c41a;
 	--color-warning: #faad14;
 	--color-error: #ff4d4f;
-
 	--color-link: #67057f;
 	--color-link-secondary: #f0ecf1;
 
 	--color-text: #000;
 	--color-bg: #e8e8ea;
   --color-bg-app: #fff;
-  --color-shadow: rgba(34, 60, 80, 0.6);
+  --color-shadow: rgba(34 60 80 / 0.6);
 }
 
 .dark {
@@ -25,9 +24,6 @@
 	--color-text: #e8e8ea;
 	--color-bg: #000;
   --color-bg-app: #302f2f;
-  --color-shadow: rgba(126, 26, 162, 0.6);
+  --color-shadow: rgba(126 26 162 / 0.6);
 
-}
-
-.blue {
 }

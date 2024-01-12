@@ -2,7 +2,7 @@
 
 #### О проекте
 
-<!-- Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Протестированы некоторые функции (jest), компоненты (react-testing-library), асинхронные функции, селекторы. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
+<!-- Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
 Модальное окно создано с использованием React Portal.
 loginReducer, profileReducer, articleDetailsReducer добавляются асинхроно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
 Страница профиля защищена от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
