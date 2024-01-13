@@ -1,6 +1,8 @@
-@import url('variables/variables.css');
-@import url('reset.css');
-@import url('theme.css');
+/* stylelint-disable import-notation */
+@import 'variables/variables.css';
+@import 'theme.css';
+@import 'reset.css';
+@import '../styles/theme.css';
 
 .app {
 font: var(--font-m);
@@ -13,6 +15,7 @@ font: var(--font-m);
 .content-page {
 	display: grid;
 	grid-template-columns: auto 1fr;
+
 }
 
 .page-wrapper {

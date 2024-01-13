@@ -9,7 +9,6 @@ export interface PageErrorProps {
 }
 
 const PageError: FC<PageErrorProps> = ({ className }) => {
-  
   const { t } = useTranslation();
 
   const reloadPage = () => {

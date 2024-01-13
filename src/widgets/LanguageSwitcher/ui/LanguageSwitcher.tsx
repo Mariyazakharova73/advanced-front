@@ -1,8 +1,8 @@
+import cn from 'classnames';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LanguageIcon } from 'shared/assets/icons/language.svg';
 import Button, { ThemeButton } from 'shared/ui/Button/Button';
-import cn from 'classnames';
 export interface LanguageSwitcherProps {
   className?: string;
 }

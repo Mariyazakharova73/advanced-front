@@ -20,5 +20,5 @@
 		// Для абсолютного импорта
 		"baseUrl": "src",
 	},
-	"include": ["src"]
+	"include": ["src", "config/storybook"]
 }
