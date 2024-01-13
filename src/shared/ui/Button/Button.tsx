@@ -1,9 +1,6 @@
 import cn from 'classnames';
 import { ButtonHTMLAttributes, FC } from 'react';
 import s from './Button.module.css';
-import '../../../app/styles/index.css';
-import '../../../app/styles/variables/variables.css';
-import '../../../app/styles/theme.css';
 
 export enum ThemeButton {
   CLEAR = 'clear',

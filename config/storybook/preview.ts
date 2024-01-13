@@ -4,6 +4,8 @@ import { StyleDecorator } from
 '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from 
 '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } 
+from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -15,7 +17,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [ThemeDecorator(Theme.LIGHT), StyleDecorator],
+  decorators: [ThemeDecorator(Theme.LIGHT), StyleDecorator, RouterDecorator],
 };
 
 export default preview;
