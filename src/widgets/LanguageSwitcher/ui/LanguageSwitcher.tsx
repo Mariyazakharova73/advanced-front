@@ -16,11 +16,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = props => {
   };
 
   return (
-    <Button
-      className={cn(className)}
-      onClick={toggleLanguage}
-      theme={ThemeButton.ICON}
-    >
+    <Button className={cn(className)} onClick={toggleLanguage} theme={ThemeButton.ICON}>
       <LanguageIcon />
     </Button>
   );

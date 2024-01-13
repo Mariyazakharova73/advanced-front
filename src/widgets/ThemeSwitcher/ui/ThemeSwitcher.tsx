@@ -11,11 +11,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   const { toggleTheme } = useTheme();
 
   return (
-    <Button
-      className={cn(className)}
-      theme={ThemeButton.ICON}
-      onClick={toggleTheme}
-    >
+    <Button className={cn(className)} theme={ThemeButton.ICON} onClick={toggleTheme}>
       <BrushIcon />
     </Button>
   );

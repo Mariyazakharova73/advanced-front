@@ -20,7 +20,6 @@ const Sidebar: FC<SidebarProps> = props => {
   };
   return (
     <div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
-      <div>fff</div>
       <div className={s.buttons}>
         <div className={collapsed ? s.switchersCol : s.switchers}>
           <ThemeSwitcher />
