@@ -9,7 +9,7 @@ function App() {
   const { theme } = useTheme();
 
   return (
-    <div className={cn('app', theme)}>
+    <div className={cn('app', 'all', theme)}>
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

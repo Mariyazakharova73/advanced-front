@@ -1,37 +1,69 @@
 .Sidebar {
-	height: calc(100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin));
-	width: var(--sidebar-width);
-	background: var(--color-primary);
+  height: calc(100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin));
+  width: var(--sidebar-width);
+  background: var(--color-primary);
+  transition: var(--app-transition);
+  display: grid;
+  align-content: space-between;
 
-	/* position: relative; */
-
-	/* тень справа  и сверху */
-	margin: var(--app-margin) var(--app-margin) 0 0;
-	border-radius: var(--app-border-radius);
-	box-shadow: 5px -5px 5px -5px var(--color-shadow);
-	padding: var(--app-padding);
-	transition: all 0.4s ease-in;
-	display: grid;
-	grid-template-rows: 1fr auto;
+  /* тень справа  и сверху */
+  margin: var(--app-margin) var(--app-margin) 0 0;
+  border-radius: var(--app-border-radius);
+  box-shadow: (5px -5px 5px -5px var(--color-shadow));
+  padding: var(--app-padding);
 }
 
 .collapsed {
-	width: var(--sidebar-width-collapsed);
-	padding: 20px 15px;
+  width: var(--sidebar-width-collapsed);
+  padding: 20px 15px;
 }
 
 .switchers {
-	display: grid;
-	grid-template-columns: 40px 40px;
-	gap: 30px;
-	justify-content: center;
+  display: grid;
+  justify-content: flex-start;
 }
 
 .switchersCol {
-	grid-template-columns: 1fr;
+  display: grid;
 }
 
 .wrapper {
-	display: grid;
-	justify-items: end;
+  display: grid;
+  justify-items: end;
+}
+
+.menLinks {
+  display: grid;
+  row-gap: 10px;
+}
+
+.linkItem {
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  transition: var(--app-transition);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.linkItem:hover {
+  box-shadow: 0 0 5px 1px var(--shadow-menu-item) inset;
+}
+
+.icon {
+  transition: var(--app-transition);
+  fill: var(--color-link-secondary);
+  stroke-width: 2px;
+  stroke: var(--color-link-secondary);
+}
+
+.linkItem:hover .icon {
+  fill: var(--color-link);
+  stroke: var(--color-link);
+}
+
+.linkItem:hover .link {
+  color: var(--color-link);
 }

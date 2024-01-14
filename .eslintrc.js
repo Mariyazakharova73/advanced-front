@@ -3,7 +3,17 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:jsx-a11y/recommended', 'plugin:promise/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:promise/recommended',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
+  ],
   overrides: [
     {
       env: {
@@ -27,12 +37,9 @@ module.exports = {
     // где использовать let, где const
     'prefer-const': 'warn',
     'no-console': ['warn', { allow: ['warn', 'info', 'error'] }],
-    'react/jsx-props-no-spreading': 'warn',
+    // 'react/jsx-props-no-spreading': 'warn',
     // отсутствие переводов только в jsx
-    'i18next/no-literal-string': [
-      'warn',
-      { markupOnly: true, ignoreAttribute: ['to'] },
-    ],
+    'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['to'] }],
     'max-len': ['error', { ignoreComments: true, code: 90 }],
 
     'prettier/prettier': [

@@ -1,22 +1,25 @@
 .Navbar {
-	width: 100%;
-	height: var(--navbar-height);
-	background: var(--color-primary);
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--color-primary);
 
-	padding: var(--app-padding);
-	display: grid;
-	align-items: center;
-	grid-template-columns: repeat(2, auto);
-	justify-content: space-between;
+  padding: var(--app-padding);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
 
-	/* тень по нижней границе */
-	margin-bottom: var(--app-margin);
-	border-radius: 0 0 var(--app-border-radius) var(--app-border-radius);
-	box-shadow: 0 7px 5px -5px var(--color-shadow);
+  /* тень по нижней границе */
+  margin-bottom: var(--app-margin);
+  border-radius: 0 0 var(--app-border-radius) var(--app-border-radius);
+  box-shadow: 0 7px 5px -5px var(--color-shadow);
 }
 
-.links {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 10px;
+.icon {
+  transition: var(--app-transition);
+  stroke: var(--color-link);
+}
+
+.icon:hover {
+  stroke: var(--color-link-secondary);
 }

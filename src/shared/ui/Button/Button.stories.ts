@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import Button, { ThemeButton } from './Button';
+import Button, { ButtonSizes, ThemeButton } from './Button';
 
 const meta = {
   title: 'shared/Button',
@@ -29,17 +29,19 @@ export const Clear: Story = {
   },
 };
 
-export const Outline: Story = {
-  args: {
-    children: 'Button',
-    theme: ThemeButton.OUTLINE,
-  },
-};
-
 export const ClearDarkTheme: Story = {
   args: {
     children: 'Button',
     theme: ThemeButton.CLEAR,
+  },
+};
+
+ClearDarkTheme.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Outline: Story = {
+  args: {
+    children: 'Button',
+    theme: ThemeButton.OUTLINE,
   },
 };
 
@@ -51,4 +53,27 @@ export const OutlineDarkTheme: Story = {
 };
 
 OutlineDarkTheme.decorators = [ThemeDecorator(Theme.DARK)];
-ClearDarkTheme.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineSizeL: Story = {
+  args: {
+    children: 'Button',
+    theme: ThemeButton.OUTLINE,
+    size: ButtonSizes.L,
+  },
+};
+
+export const SquareSizeM: Story = {
+  args: {
+    children: '>',
+    size: ButtonSizes.M,
+  },
+};
+
+export const SquareSizeL: Story = {
+  args: {
+    children: '>',
+    size: ButtonSizes.L,
+  },
+};
+
+SquareSizeM.decorators = [ThemeDecorator(Theme.DARK)];

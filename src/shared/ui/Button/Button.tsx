@@ -8,16 +8,33 @@ export enum ThemeButton {
   OUTLINE = 'outline',
 }
 
+export enum ButtonSizes {
+  M = 'size_m',
+  L = 'size_l',
+  XL = 'size_xl',
+}
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   theme?: ThemeButton;
+  square?: boolean;
+  size?: ButtonSizes;
 }
 
 const Button: FC<ButtonProps> = props => {
-  const { className, children, theme = '', ...otherProps } = props;
+  const {
+    className,
+    children,
+    theme = '',
+    square,
+    size = ButtonSizes.M,
+    ...otherProps
+  } = props;
+
+  const mods = { [s.square]: square };
+
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <button className={cn(s.Button, className, s[theme])} {...otherProps}>
+    <button className={cn(s.Button, className, s[theme], mods, s[size])} {...otherProps}>
       {children}
     </button>
   );

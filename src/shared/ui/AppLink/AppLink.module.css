@@ -1,12 +1,21 @@
 .AppLink {
   color: var(--color-link);
   text-decoration: none;
+  transition: var(--app-transition);
 }
 
 .primary {
   color: var(--color-link);
 }
 
+.primary:hover {
+  color: var(--color-link-secondary);
+}
+
 .secondary {
   color: var(--color-link-secondary);
+}
+
+.secondary:hover {
+  color: var(--color-link);
 }
