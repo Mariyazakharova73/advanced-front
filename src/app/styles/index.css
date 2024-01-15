@@ -4,26 +4,31 @@
 @import 'reset.css';
 @import '../styles/theme.css';
 
+body {
+  background-color: var(--color-bg-app);
+  font: var(--font-m);
+  color: var(--color-text);
+}
+
 .app {
-font: var(--font-m);
-	min-height: 100vh;
-	height: 100vh;
-	color: var(--color-text);
-	background-color: var(--color-bg-app);
+  min-height: 100vh;
+  height: 100vh;
+  background-color: var(--color-bg-app);
+  font: var(--font-m);
+  color: var(--color-text);
 }
 
 .content-page {
-	display: grid;
-	grid-template-columns: auto 1fr;
-
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .page-wrapper {
-	padding: var(--app-padding);
-	background: var(--color-bg);
+  padding: var(--app-padding);
+  background: var(--color-bg);
 
-	/* тень по нижней границе */
-	margin: var(--app-margin) 0 0 var(--app-margin);
-	border-radius: var(--app-border-radius);
-	box-shadow: -5px -5px 5px -5px var(--color-shadow);
+  /* тень по нижней границе */
+  margin: var(--app-margin) 0 0 var(--app-margin);
+  border-radius: var(--app-border-radius);
+  box-shadow: -5px -5px 5px -5px var(--color-shadow);
 }

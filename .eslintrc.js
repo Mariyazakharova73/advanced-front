@@ -14,17 +14,7 @@ module.exports = {
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
   ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
+
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -41,12 +31,25 @@ module.exports = {
     // отсутствие переводов только в jsx
     'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['to'] }],
     'max-len': ['error', { ignoreComments: true, code: 90 }],
-
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     'prettier/prettier': [
       'warn',
       {
         endOfLine: 'auto',
         jsxSingleQuote: false,
+      },
+    ],
+    //  для тестов и stories:
+    overrides: [
+      {
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+        rules: {
+          // отменяем предупреждения о переводах
+          'i18next/no-literal-string': 'off',
+          // отменяем максимальную длину строки
+          'max-len': 'off',
+        },
       },
     ],
   },

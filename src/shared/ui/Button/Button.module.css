@@ -1,15 +1,53 @@
 .Button {
   cursor: pointer;
   padding: 6px 15px;
+  transition: var(--app-transition);
 }
 
-.clear {
+.Button:hover {
+  opacity: 0.7;
+  fill-opacity: 0.7;
+}
+
+.primary,
+.primaryLight {
+  border: none;
+  border-radius: var(--app-border-radius);
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.primaryLight {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
+
+.outline,
+.outlineLight {
+  background: none;
+  border-radius: var(--app-border-radius);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.outlineLight {
+  border: 1px solid var(--color-light);
+  color: var(--color-light);
+}
+
+.clear,
+.clearLight {
   padding: 0;
   margin: 0;
   border: none;
   background: none;
   outline: none;
   color: var(--color-primary);
+}
+
+.clearLight {
+  color: var(--color-light);
+  fill: var(--color-light);
 }
 
 .icon {
@@ -18,50 +56,17 @@
   border: none;
   background: none;
   outline: none;
-  transition: var(--app-transition);
-  opacity: 1;
-}
-
-.icon:hover {
-  fill: var(--color-link);
-  color: var(--color-link);
-  opacity: 0.8;
-}
-
-.outline {
-  border: 1px solid;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: none;
+  fill: var(--color-dark);
 }
 
 .size_m {
-  font: var(--font-m)
- }
- 
- .size_l {
-   font: var(--font-l)
-  }
- 
-  .size_xl {
-   font: var(--font-xl)
-  }
-
-.square {
-  padding: 0;
+  font: var(--font-m);
 }
 
-.square.size_m {
-  width: var(--font-line-m);
-  height: var(--font-line-m);
+.size_l {
+  font: var(--font-l);
 }
 
-.square.size_l {
-  width: var(--font-line-l);
-  height: var(--font-line-l);
-}
-
-.square.size_xl {
-  width: var(--font-line-xl);
-  height: var(--font-line-xl);
+.size_xl {
+  font: var(--font-xl);
 }

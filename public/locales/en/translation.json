@@ -4,5 +4,6 @@
   "update-page": "Refresh the page",
   "error": "An unexpected error occurred",
   "main": "Main",
-  "about": "About us"
+  "about": "About us",
+  "login": "Login"
 }

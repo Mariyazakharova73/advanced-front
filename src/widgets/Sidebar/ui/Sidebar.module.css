@@ -9,7 +9,7 @@
   /* тень справа  и сверху */
   margin: var(--app-margin) var(--app-margin) 0 0;
   border-radius: var(--app-border-radius);
-  box-shadow: (5px -5px 5px -5px var(--color-shadow));
+  box-shadow: 5px -5px 5px -5px var(--color-shadow);
   padding: var(--app-padding);
 }
 
@@ -37,33 +37,30 @@
   row-gap: 10px;
 }
 
-.linkItem {
+.link {
   display: grid;
   justify-content: start;
   grid-auto-flow: column;
   align-items: center;
   gap: 10px;
-  transition: var(--app-transition);
   border-radius: 10px;
   padding: 10px;
+  transition: var(--app-transition);
+  overflow: hidden;
 }
 
-.linkItem:hover {
+.link:hover {
   box-shadow: 0 0 5px 1px var(--shadow-menu-item) inset;
+  color: var(--color-dark);
 }
 
 .icon {
   transition: var(--app-transition);
-  fill: var(--color-link-secondary);
-  stroke-width: 2px;
-  stroke: var(--color-link-secondary);
+  fill: var(--color-light);
+  stroke: var(--color-light);
 }
 
-.linkItem:hover .icon {
-  fill: var(--color-link);
-  stroke: var(--color-link);
-}
-
-.linkItem:hover .link {
-  color: var(--color-link);
+.link:hover .icon {
+  fill: var(--color-dark);
+  stroke: var(--color-dark);
 }

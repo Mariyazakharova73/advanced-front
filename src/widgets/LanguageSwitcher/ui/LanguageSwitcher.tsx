@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LanguageIcon } from 'shared/assets/icons/language.svg';
-import Button, { ThemeButton } from 'shared/ui/Button/Button';
+import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 export interface LanguageSwitcherProps {
   className?: string;
 }
@@ -16,7 +16,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = props => {
   };
 
   return (
-    <Button className={cn(className)} onClick={toggleLanguage} theme={ThemeButton.ICON}>
+    <Button className={cn(className)} onClick={toggleLanguage} theme={ButtonTheme.ICON}>
       <LanguageIcon />
     </Button>
   );
