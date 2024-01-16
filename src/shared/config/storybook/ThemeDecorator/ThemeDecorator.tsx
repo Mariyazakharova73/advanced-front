@@ -5,7 +5,7 @@ export const ThemeDecorator = (theme: Theme) => (Story: any) => {
   document.body.className = theme;
   return (
     <ThemeProvider initialTheme={theme}>
-      <div className={`app ${theme}`}>
+      <div className={`app ${theme} colors`}>
         <Story />
       </div>
     </ThemeProvider>

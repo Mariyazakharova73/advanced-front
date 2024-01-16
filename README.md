@@ -5,12 +5,12 @@
 Приложение для просмотра статей. 
 MainPage -
 ProfilePage - просмотр и редактирование профиля.
-AboutPage "О нас" - 
+AboutPage - 
 ArticlesPage - просмотр статей, комментариев, добавление комментариев.
 LoginPage, RegisterPage, NotFoundPage
 
 Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
-Модальное окно создано с использованием React Portal.
+Модальное окно создано с использованием React Portal. (lazy loading). 
 
 <!-- 
 loginReducer, profileReducer, articleDetailsReducer добавляются асинхроно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
@@ -46,7 +46,7 @@ shared - assets, RouteConfig, Decorators, i18n, routeConfig, Loader, Button, Mod
 
 <details><summary><b>Развернуть</b></summary>
 
-Клонировать репозиторий (backend):
+Клонировать репозиторий:
 
     git clone https://github.com/Mariyazakharova73/advanced-front.git
 

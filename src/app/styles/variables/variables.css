@@ -26,4 +26,5 @@
   --app-transition: all 0.5s ease-in;
   --modal-z-index: 10;
   --overlay-color: rgba(0 0 0 / 0.6);
+  --input-shadow: 0px 5px 10px 2px var(--color-shadow);
 }

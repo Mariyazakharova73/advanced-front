@@ -5,17 +5,14 @@
 @import '../styles/theme.css';
 
 body {
-  background-color: var(--color-bg-app);
   font: var(--font-m);
   color: var(--color-text);
 }
 
 .app {
+  background-color: var(--color-bg-app);
   min-height: 100vh;
   height: 100vh;
-  background-color: var(--color-bg-app);
-  font: var(--font-m);
-  color: var(--color-text);
 }
 
 .content-page {

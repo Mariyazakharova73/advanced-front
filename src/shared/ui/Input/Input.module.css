@@ -1,0 +1,19 @@
+.InputWrapper {
+  display: grid;
+  gap: 5px;
+}
+
+.placeholder {
+  color: var(--color-primary);
+}
+
+.input {
+  background: transparent;
+  padding: 5px 10px;
+  border: 0;
+  box-shadow: 0 5px 10px 2px var(--input-shadow);
+  color: var(--color-primary);
+  border-radius: var(--app-border-radius);
+  outline: none;
+  caret-color: var(--color-primary);
+}

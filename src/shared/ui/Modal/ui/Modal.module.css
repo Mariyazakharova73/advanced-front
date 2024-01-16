@@ -24,7 +24,6 @@
   background-color: var(--color-bg);
   transition: 0.3s transform;
   transform: scale(0.4);
-  width: 60%;
 }
 
 .opened {

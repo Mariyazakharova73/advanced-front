@@ -1,0 +1,12 @@
+.LoginForm {
+  display: grid;
+  gap: 15px;
+  width: 400px;
+}
+
+.input {
+}
+
+.loginBtn {
+  margin-left: auto;
+}

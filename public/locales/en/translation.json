@@ -5,5 +5,7 @@
   "error": "An unexpected error occurred",
   "main": "Main",
   "about": "About us",
-  "login": "Login"
+  "login": "Login",
+  "enter-username": "Enter username",
+  "enter-password": "Enter password"
 }
