@@ -3,11 +3,12 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'feature/AuthByUserName';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ReactComponent as AtomIcon } from 'shared/assets/icons/atom.svg';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import s from './Navbar.module.css';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface NavbarProps {
   className?: string;
@@ -16,7 +17,7 @@ export interface NavbarProps {
 const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [isAuthModal, setIsAuthModal] = useState(false);
 
@@ -48,7 +49,7 @@ const Navbar = ({ className }: NavbarProps) => {
           </Button>
         )}
       </div>
-      <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} />
+      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} />}
     </div>
   );
 };

@@ -9,8 +9,10 @@ AboutPage -
 ArticlesPage - просмотр статей, комментариев, добавление комментариев.
 NotFoundPage
 
+Данные для входа - username: admin, password 123;
+
 Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
-Модальное окно создано с использованием React Portal. (lazy loading). 
+Модальное окно создано с использованием React Portal. (lazy loading modal). 
 
 <!-- 
 loginReducer, profileReducer, articleDetailsReducer добавляются асинхроно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).

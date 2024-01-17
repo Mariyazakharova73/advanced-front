@@ -1,18 +1,41 @@
-import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
-import { StateSchema } from './StateSchema';
-import { loginReducer } from 'feature/AuthByUserName';
+import { type NavigateFunction } from 'react-router-dom';
+import { createReducerManager } from './reducerManager';
+import { type StateSchema } from './StateSchema';
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>,
+  navigate?: NavigateFunction,
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     user: userReducer,
-    loginForm: loginReducer,
   };
-  return configureStore<StateSchema>({
-    reducer: rootReducers,
-    devTools: true,
+
+  const reducerManager = createReducerManager(rootReducers);
+
+  // const extraArg: ThunkExtraArg = {
+  //   navigate,
+  // };
+
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<any>,
     preloadedState: initialState,
+    // middleware: (getDefaultMiddleware) =>
+    //   getDefaultMiddleware({
+    //     thunk: {
+    //       extraArgument: extraArg,
+    //     },
+    //   }),
   });
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  store.reducerManager = reducerManager;
+
+  return store;
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

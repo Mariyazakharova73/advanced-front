@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from
- 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import Sidebar from './Sidebar';
 
 const meta = {

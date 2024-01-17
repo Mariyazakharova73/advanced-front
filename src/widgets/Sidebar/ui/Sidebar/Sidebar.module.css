@@ -36,31 +36,3 @@
   display: grid;
   row-gap: 10px;
 }
-
-.link {
-  display: grid;
-  justify-content: start;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  padding: 10px;
-  transition: var(--app-transition);
-  overflow: hidden;
-}
-
-.link:hover {
-  box-shadow: 0 0 5px 1px var(--shadow-menu-item) inset;
-  color: var(--color-dark);
-}
-
-.icon {
-  transition: var(--app-transition);
-  fill: var(--color-light);
-  stroke: var(--color-light);
-}
-
-.link:hover .icon {
-  fill: var(--color-dark);
-  stroke: var(--color-dark);
-}

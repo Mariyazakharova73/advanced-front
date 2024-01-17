@@ -9,5 +9,6 @@
   "enter-username": "Введите имя пользователя",
   "enter-password": "Введите пароль",
   "title-form": "Форма авторизации",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "profile": "Профиль"
 }
