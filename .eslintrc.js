@@ -41,16 +41,16 @@ module.exports = {
       },
     ],
     //  для тестов и stories:
-    overrides: [
-      {
-        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-        rules: {
-          // отменяем предупреждения о переводах
-          'i18next/no-literal-string': 'off',
-          // отменяем максимальную длину строки
-          'max-len': 'off',
-        },
-      },
-    ],
+    // overrides: [
+    //   {
+    //     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+    //     rules: {
+    //       // отменяем предупреждения о переводах
+    //       'i18next/no-literal-string': 'off',
+    //       // отменяем максимальную длину строки
+    //       'max-len': 'off',
+    //     },
+    //   },
+    // ],
   },
 };

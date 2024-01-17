@@ -14,14 +14,7 @@ export interface InputProps extends HTMLInputProps {
 }
 
 const Input: FC<InputProps> = props => {
-  const {
-    className,
-    value,
-    onChange,
-    type = 'text',
-    placeholder,
-    ...otherProps
-  } = props;
+  const { className, value, onChange, type = 'text', placeholder, ...otherProps } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);

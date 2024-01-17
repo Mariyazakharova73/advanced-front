@@ -21,7 +21,7 @@ export const Light: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolorsit amet consectetur adipisicing elit. Consequuntur, aspernatur numquam amet non deleniti, atque sapiente ab nesciunt soluta aut eaque optio ut dolorum labore distinctio eum corrupti hic nihil',
+      'Lorem ipsum dolorsit amet consectetur'
   },
 };
 
@@ -31,7 +31,7 @@ export const Dark: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolorsit amet consectetur adipisicing elit. Consequuntur, aspernatur numquam amet non deleniti, atque sapiente ab nesciunt soluta aut eaque optio ut dolorum labore distinctio eum corrupti hic nihil',
+      'Lorem ipsum dolorsit amet consectetur',
   },
 };
 

@@ -24,18 +24,28 @@ export const Primary: Story = {
   args: { children: 'text', theme: AppLinkTheme.PRIMARY },
 };
 
-export const Secondary: Story = {
-  args: { children: 'text', theme: AppLinkTheme.DARK },
-};
-
-export const PrimaryDark: Story = {
+export const PrimaryThemeDark: Story = {
   args: { children: 'text', theme: AppLinkTheme.PRIMARY },
 };
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryThemeDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const SecondaryDark: Story = {
+export const Light: Story = {
+  args: { children: 'text', theme: AppLinkTheme.LIGHT },
+};
+
+export const LightThemeDark: Story = {
+  args: { children: 'text', theme: AppLinkTheme.LIGHT },
+};
+
+LightThemeDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Dark: Story = {
   args: { children: 'text', theme: AppLinkTheme.DARK },
-}
+};
 
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const LinkDarkThemeDark: Story = {
+  args: { children: 'text', theme: AppLinkTheme.DARK },
+};
+
+LinkDarkThemeDark.decorators = [ThemeDecorator(Theme.DARK)];

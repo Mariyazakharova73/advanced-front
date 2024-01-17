@@ -22,6 +22,32 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryDarkTheme: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.PRIMARY,
+  },
+};
+
+PrimaryDarkTheme.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryLight: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.PRIMARY_LIGHT,
+  },
+};
+
+export const PrimaryLightThemeDark: Story = {
+  args: {
+    children: 'Button',
+    theme: ButtonTheme.PRIMARY_LIGHT,
+  },
+};
+
+PrimaryLightThemeDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+
 export const Clear: Story = {
   args: {
     children: 'Button',
@@ -61,19 +87,3 @@ export const OutlineSizeL: Story = {
     size: ButtonSizes.L,
   },
 };
-
-export const SquareSizeM: Story = {
-  args: {
-    children: '>',
-    size: ButtonSizes.M,
-  },
-};
-
-export const SquareSizeL: Story = {
-  args: {
-    children: '>',
-    size: ButtonSizes.L,
-  },
-};
-
-SquareSizeM.decorators = [ThemeDecorator(Theme.DARK)];
