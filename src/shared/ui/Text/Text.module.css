@@ -1,0 +1,42 @@
+.title {
+  font: var(--font-l);
+  color: var(--color-primary);
+}
+
+.text {
+  font: var(--font-m);
+  color: var(--color-primary);
+}
+
+.error .title,
+.text {
+  color: var(--color-error);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.size_m .title {
+  font: var(--font-l);
+}
+
+.size_m .text {
+  font: var(--font-m);
+}
+
+.size_l .title {
+  font: var(--font-xl);
+}
+
+.size_l .text {
+  font: var(--font-l);
+}

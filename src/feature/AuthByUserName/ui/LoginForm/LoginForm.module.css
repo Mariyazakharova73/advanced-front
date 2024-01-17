@@ -2,11 +2,15 @@
   display: grid;
   gap: 15px;
   width: 400px;
-}
-
-.input {
+  justify-items: center;
+  min-height: 232px;
 }
 
 .loginBtn {
   margin-left: auto;
+  align-self: end;
+}
+
+.input {
+  width: 100%;
 }

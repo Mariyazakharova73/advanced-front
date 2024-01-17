@@ -1,8 +1,10 @@
 import { type EnhancedStore } from '@reduxjs/toolkit';
 import { UserSchema } from 'entities/User';
+import { LoginSchema } from 'feature/AuthByUserName/model/types/loginSchema';
 
 export interface StateSchema {
   user: UserSchema;
+  loginForm: LoginSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

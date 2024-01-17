@@ -30,7 +30,7 @@ module.exports = {
     // 'react/jsx-props-no-spreading': 'warn',
     // отсутствие переводов только в jsx
     'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['to'] }],
-    'max-len': ['error', { ignoreComments: true, code: 90 }],
+    'max-len': ['error', { ignoreComments: true, code: 120 }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     'prettier/prettier': [

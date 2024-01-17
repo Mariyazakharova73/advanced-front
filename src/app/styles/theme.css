@@ -26,6 +26,7 @@
   --color-text: #e8e8ea;
   --color-bg: #302f2f;
   --color-bg-app: #000;
+  --color-shadow: rgba(248 248 252 / 0.9);
 
   --input-shadow: rgba(111 181 235 / 0.2);
 }

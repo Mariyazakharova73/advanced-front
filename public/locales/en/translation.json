@@ -7,5 +7,7 @@
   "about": "About us",
   "login": "Login",
   "enter-username": "Enter username",
-  "enter-password": "Enter password"
+  "enter-password": "Enter password",
+  "title-form": "Authorization form",
+  "logout": "Logout"
 }
