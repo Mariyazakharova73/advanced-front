@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren, memo } from 'react';
 import s from './Button.module.css';
 
 export enum ButtonTheme {
@@ -25,7 +25,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = props => {
+const Button = (props: PropsWithChildren<ButtonProps>) => {
   const {
     className,
     children,
@@ -48,4 +48,5 @@ const Button: FC<ButtonProps> = props => {
   );
 };
 
-export default Button;
+// обернули в memo, т.к в качестве children - строка
+export default memo(Button);

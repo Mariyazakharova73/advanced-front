@@ -1,19 +1,17 @@
 import cn from 'classnames';
 import {
   MouseEvent,
+  PropsWithChildren,
   useCallback,
   useEffect,
   useRef,
   useState,
-  type FC,
-  type ReactNode,
 } from 'react';
 import Portal from 'shared/ui/Portal/Portal';
 import s from './Modal.module.css';
 
 export interface ModalProps {
   className?: string;
-  children?: ReactNode;
   isOpen: boolean;
   onClose?: () => void;
   lazy?: boolean;
@@ -21,7 +19,7 @@ export interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-const Modal: FC<ModalProps> = props => {
+const Modal = (props: PropsWithChildren<ModalProps>) => {
   const { className, children, isOpen, lazy, onClose } = props;
 
   // for animation when closing a modal

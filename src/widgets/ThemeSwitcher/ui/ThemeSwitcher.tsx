@@ -1,5 +1,6 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import cn from 'classnames';
+import { memo } from 'react';
 import { ReactComponent as BrushIcon } from 'shared/assets/icons/brush.svg';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 
@@ -17,4 +18,4 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   );
 };
 
-export default ThemeSwitcher;
+export default memo(ThemeSwitcher);

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'feature/AuthByUserName';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ReactComponent as AtomIcon } from 'shared/assets/icons/atom.svg';
@@ -54,4 +54,4 @@ const Navbar = ({ className }: NavbarProps) => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { PropsWithChildren, memo } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import s from './AppLink.module.css';
 
@@ -14,7 +14,7 @@ export interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-const AppLink: FC<AppLinkProps> = props => {
+const AppLink = (props: PropsWithChildren<AppLinkProps>) => {
   const { to, className, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
@@ -24,4 +24,4 @@ const AppLink: FC<AppLinkProps> = props => {
   );
 };
 
-export default AppLink;
+export default memo(AppLink);

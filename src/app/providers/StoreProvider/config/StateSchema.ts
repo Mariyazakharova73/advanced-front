@@ -5,6 +5,7 @@ import {
   type ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { type AxiosInstance } from 'axios';
+import { ProfileSchema } from 'entities/Profile';
 import { type UserSchema } from 'entities/User';
 import { LoginSchema } from 'feature/AuthByUserName';
 
@@ -15,6 +16,7 @@ export interface StateSchema {
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -35,6 +37,7 @@ export interface ThunkExtraArg {
   navigate?: NavigateFunction;
 }
 
+// 3 арг. в createAsyncThunk
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArg;

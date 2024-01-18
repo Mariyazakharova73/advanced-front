@@ -6,3 +6,5 @@ export enum FormKeys {
   USERNAME = 'username',
   AVATAR = 'avatar',
 }
+
+export const isDev = true;

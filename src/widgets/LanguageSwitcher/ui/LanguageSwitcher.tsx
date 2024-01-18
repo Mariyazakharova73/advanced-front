@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LanguageIcon } from 'shared/assets/icons/language.svg';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
@@ -22,4 +22,4 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = props => {
   );
 };
 
-export default LanguageSwitcher;
+export default memo(LanguageSwitcher);

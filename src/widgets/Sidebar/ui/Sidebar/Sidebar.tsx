@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC, useMemo, useState } from 'react';
+import { FC, memo, useState } from 'react';
 
 import { ReactComponent as ArrowLeft } from 'shared/assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'shared/assets/icons/arrow-right.svg';
@@ -23,15 +23,13 @@ const Sidebar: FC<SidebarProps> = props => {
     setCollapsed(prev => !prev);
   };
 
-  const itemsList = useMemo(() => {
-    return SidebarItemsList.map(item => {
-      return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
-    });
-  }, [collapsed]);
-
   return (
     <div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
-      <div className={s.menLinks}>{itemsList}</div>
+      <div className={s.menLinks}>
+        {SidebarItemsList.map(item => {
+          return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
+        })}
+      </div>
       <div className={s.buttons}>
         <div className={collapsed ? s.switchersCol : s.switchers}>
           <ThemeSwitcher />
@@ -47,4 +45,4 @@ const Sidebar: FC<SidebarProps> = props => {
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);
