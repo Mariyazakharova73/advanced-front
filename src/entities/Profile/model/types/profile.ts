@@ -11,7 +11,7 @@ export interface Profile {
 }
 
 export interface ProfileSchema {
-  data?: Profile;
+  data?: Profile[];
   // form?: Profile;
   error?: string;
   isLoading: boolean;

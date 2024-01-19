@@ -17,3 +17,7 @@
   outline: none;
   caret-color: var(--color-primary);
 }
+
+.readonly input{
+  box-shadow: none;
+};

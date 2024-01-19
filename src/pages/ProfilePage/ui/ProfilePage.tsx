@@ -1,13 +1,20 @@
 import cn from 'classnames';
-import { fetchProfileData, profileReducer } from 'entities/Profile';
+import {
+  ProfileCard,
+  fetchProfileData,
+  getProfileData,
+  getProfileError,
+  getProfileIsLoading,
+  profileReducer,
+} from 'entities/Profile';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import s from './ProfilePage.module.css';
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData';
+import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 export interface ProfilePageProps {
   className?: string;
@@ -19,16 +26,21 @@ const initialReducers: ReducerList = {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
+
   const data = useSelector(getProfileData);
+  const error = useSelector(getProfileError);
+  const isLoading = useSelector(getProfileIsLoading);
 
   useEffect(() => {
     dispatch(fetchProfileData());
-    console.log(data)
   }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnMount>
-      <div className={cn(s.ProfilePage, className)}>profile</div>
+      <div className={cn(s.ProfilePage, className)}>
+        <ProfilePageHeader />
+        <ProfileCard data={data} isLoading={isLoading} error={error} />
+      </div>
     </DynamicModuleLoader>
   );
 };

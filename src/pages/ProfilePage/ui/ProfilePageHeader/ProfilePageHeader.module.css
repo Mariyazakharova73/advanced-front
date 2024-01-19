@@ -1,0 +1,9 @@
+.ProfilePageHeader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.button {
+  margin-left: auto;
+}

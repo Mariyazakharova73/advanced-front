@@ -1,2 +1,22 @@
 .ProfileCard {
+  padding: var(--app-padding);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--app-border-radius);
+}
+
+.loading,
+.error {
+  display: grid;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
+
+}
+
+.button {
+  margin-left: auto;
+}
+
+.input {
+  margin-top: 10px;
 }

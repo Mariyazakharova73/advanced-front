@@ -7,11 +7,11 @@ export enum TextTheme {
   ERROR = 'error',
 }
 
-// export enum TextAlign {
-//   RIGHT = 'right',
-//   LEFT = 'left',
-//   CENTER = 'center',
-// }
+export enum TextAlign {
+  RIGHT = 'right',
+  LEFT = 'left',
+  CENTER = 'center',
+}
 
 export enum TextSize {
   M = 'size_m',
@@ -23,7 +23,7 @@ export interface TextProps {
   title?: string;
   text?: string;
   theme?: TextTheme;
-  // align?: TextAlign;
+  align?: TextAlign;
   size?: TextSize;
 }
 
@@ -32,19 +32,11 @@ const Text: FC<TextProps> = ({
   title,
   text,
   theme = TextTheme.PRIMARY,
-  // align = TextAlign.LEFT,
+  align = TextAlign.LEFT,
   size = TextSize.M,
 }) => {
   return (
-    <div
-      className={cn(
-        s.Text,
-        className,
-        s[theme],
-        // s[align],
-        s[size],
-      )}
-    >
+    <div className={cn(s.Text, className, s[theme], s[align], s[size])}>
       {title && <p className={s.title}>{title}</p>}
       {text && <p className={s.text}>{text}</p>}
     </div>
