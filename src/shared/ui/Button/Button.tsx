@@ -4,6 +4,7 @@ import s from './Button.module.css';
 
 export enum ButtonTheme {
   PRIMARY = 'primary',
+  PRIMARY_RED = 'primaryRed',
   PRIMARY_LIGHT = 'primaryLight',
   OUTLINE = 'outline',
   OUTLINE_LIGHT = 'outlineLight',

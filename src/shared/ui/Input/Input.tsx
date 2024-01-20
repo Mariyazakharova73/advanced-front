@@ -11,10 +11,11 @@ type HTMLInputProps = Omit<
 export interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
-  onChange?: (value: string) => void;
+  onChange?: (value: string, name?: string) => void;
   placeholder?: string;
   autoFocus?: boolean;
   readonly?: boolean;
+  name?: string;
 }
 
 const Input: FC<InputProps> = props => {
@@ -25,11 +26,12 @@ const Input: FC<InputProps> = props => {
     readonly,
     type = 'text',
     placeholder,
+    name,
     ...otherProps
   } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value, e.target?.name);
   };
 
   const mods = {
@@ -43,6 +45,7 @@ const Input: FC<InputProps> = props => {
         readOnly={readonly}
         className={s.input}
         type={type}
+        name={name || ''}
         value={value || ''}
         onChange={onChangeHandler}
         {...otherProps}

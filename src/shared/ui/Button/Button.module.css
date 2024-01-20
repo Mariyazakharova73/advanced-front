@@ -10,7 +10,8 @@
 }
 
 .primary,
-.primaryLight {
+.primaryLight,
+.primaryRed {
   border: none;
   border-radius: var(--app-border-radius);
   background-color: var(--color-primary);
@@ -20,6 +21,11 @@
 .primaryLight {
   background-color: var(--color-light);
   color: var(--color-primary);
+}
+
+.primaryRed {
+  background-color: var(--color-error);
+  color: var(--color-light);
 }
 
 .outline,
@@ -72,5 +78,5 @@
 }
 
 .disabled {
-  opacity: .4;
+  opacity: 0.4;
 }

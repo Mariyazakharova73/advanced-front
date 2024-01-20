@@ -1,9 +1,15 @@
 {
   "profileTitle": "Profile",
   "edit": "Edit",
-  "first": "Your first name",
-  "last": "Your last name",
   "profile-error": "An error occurred while loading profile data",
   "update-page": "Try refreshing the page",
-    "cancel": "Cancel"
+  "cancel": "Cancel",
+  "save": "Save",
+
+  "first": "Your first name",
+  "lastname": "Your last name",
+  "age": "Age",
+  "city": "City",
+  "username": "User name",
+  "avatar": "Avatar"
 }

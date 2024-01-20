@@ -7,3 +7,10 @@
 .button {
   margin-left: auto;
 }
+
+.buttonsWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 10px;
+}
