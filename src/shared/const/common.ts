@@ -8,3 +8,5 @@ export enum FormKeys {
 }
 
 export const isDev = true;
+
+export type Project = 'storybook' | 'frontend' | 'jest'

@@ -1,3 +1,6 @@
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+
 export interface Profile {
   id?: string;
   first?: string;
@@ -16,17 +19,13 @@ export interface ProfileSchema {
   error?: string;
   isLoading: boolean;
   readonly: boolean; // редактирование профиля
-  // validateErrors?: validateProfileError[];
+  validateErrors?: ValidateProfileError[];
 }
 
-export enum Currency {
-  RUB = 'RUB',
-  EUR = 'EUR',
-  USD = 'USD',
-}
-
-export enum Country {
-  Russia = 'Russia',
-  Belarus = 'Belarus',
-  Armenia = 'Armenia',
+export enum ValidateProfileError {
+  INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
+  INCORRECT_AGE = 'INCORRECT_AGE',
+  INCORRECT_CITY = 'INCORRECT_CITY',
+  NO_DATA = 'NO_DATA',
+  SERVER_ERROR = 'SERVER_ERROR',
 }

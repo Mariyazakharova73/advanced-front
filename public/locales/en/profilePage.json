@@ -11,5 +11,12 @@
   "age": "Age",
   "city": "City",
   "username": "User name",
-  "avatar": "Avatar"
+  "avatar": "Avatar",
+  "currencyLabel": "Specify currency",
+  "countryLabel": "Please indicate your country",
+  "serverError": "Server Error",
+  "incorrectAge": "Incorrect Age",
+  "incorrectCity": "Incorrect city",
+  "incorrectUser": "Incorrect user data",
+  "noData": "No Data"
 }

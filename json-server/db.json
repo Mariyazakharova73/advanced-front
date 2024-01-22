@@ -1096,11 +1096,11 @@
   "profile": [
     {
       "id": "1",
-      "first": "Mary",
+      "first": "M",
       "lastname": "React",
       "age": "15",
       "currency": "EUR",
-      "country": "Russia",
+      "country": "Armenia",
       "city": "Ульяновск",
       "username": "admin",
       "avatar": "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-abstract-sexy-female-avatar-png-image_2326139.jpg"

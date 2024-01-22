@@ -1,5 +1,8 @@
 import cn from 'classnames';
+import { Country, CountrySelect } from 'entities/Country';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
+import Avatar from 'shared/ui/Avatar/Avatar';
 import Input from 'shared/ui/Input/Input';
 import Loader from 'shared/ui/Loader/Loader';
 import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
@@ -13,11 +16,22 @@ export interface ProfileCardProps {
   error?: string;
   onChangeInput: (value: string, name?: string) => void;
   readonly: boolean;
+  onChangeCurrency: (currency: Currency) => void;
+  onChangeCountry: (country: Country) => void;
 }
 
 const ProfileCard = (props: ProfileCardProps) => {
   const { t } = useTranslation('profilePage');
-  const { className, data, isLoading, error, onChangeInput, readonly } = props;
+  const {
+    className,
+    data,
+    isLoading,
+    error,
+    onChangeInput,
+    readonly,
+    onChangeCurrency,
+    onChangeCountry,
+  } = props;
 
   if (isLoading) {
     return (
@@ -42,7 +56,12 @@ const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={cn(s.ProfileCard, className)}>
-      <div>
+      {data?.avatar && (
+        <div className={s.avatarWrapper}>
+          <Avatar src={data?.avatar} />
+        </div>
+      )}
+      <div className={s.inputWrapper}>
         {['first', 'lastname', 'age', 'city', 'username', 'avatar'].map(
           (item: string) => {
             return (
@@ -60,6 +79,16 @@ const ProfileCard = (props: ProfileCardProps) => {
             );
           },
         )}
+        <CurrencySelect
+          readonly={readonly}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+        />
+        <CountrySelect
+          readonly={readonly}
+          value={data?.country}
+          onChange={onChangeCountry}
+        />
       </div>
     </div>
   );

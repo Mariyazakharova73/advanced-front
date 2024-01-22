@@ -13,3 +13,4 @@ export { getProfileError } from './model/selectors//getProfileError';
 export { getProfileData } from './model/selectors/getProfileData';
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading';
 export { getProfileReadOnly } from './model/selectors/getProfileReadOnly';
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors';
