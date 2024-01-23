@@ -1,14 +1,17 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import cn from 'classnames';
-import { userActions } from 'entities/User';
+import { getUserInited, userActions } from 'entities/User';
 import { Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 function App() {
   const { theme } = useTheme();
+
+  const inited = useSelector(getUserInited);
 
   const dispatch = useAppDispatch();
 
@@ -22,7 +25,8 @@ function App() {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {/* отрисовываем роутер только когда данные профиля получены */}
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>

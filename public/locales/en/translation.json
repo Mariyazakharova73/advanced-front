@@ -10,5 +10,6 @@
   "enter-password": "Enter password",
   "title-form": "Authorization form",
   "logout": "Logout",
-  "profile": "Profile"
+  "profile": "Profile",
+  "articles": "Articles"
 }

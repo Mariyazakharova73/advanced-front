@@ -4,6 +4,10 @@
   transition: var(--app-transition);
 }
 
+.linkActive {
+  text-decoration: underline;
+}
+
 .AppLink:hover {
   opacity: 0.7;
 }

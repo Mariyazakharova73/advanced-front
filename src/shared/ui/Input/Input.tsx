@@ -32,7 +32,6 @@ const Input: FC<InputProps> = props => {
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value, e.target?.name);
-    console.log(e.target.value, 'value')
   };
 
   const mods = {
