@@ -49,6 +49,7 @@
   background: none;
   outline: none;
   color: var(--color-primary);
+  stroke: var(--color-primary);
 }
 
 .clearLight {

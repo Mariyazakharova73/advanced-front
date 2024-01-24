@@ -1,15 +1,16 @@
+.primary {
+  color: var(--color-primary);
+}
+
 .title {
   font: var(--font-l);
-  color: var(--color-primary);
 }
 
 .text {
   font: var(--font-m);
-  color: var(--color-primary);
 }
 
-.error .title,
-.text {
+.error {
   color: var(--color-error);
 }
 

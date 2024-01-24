@@ -1,0 +1,14 @@
+.Code {
+  padding: 20px;
+  position: relative;
+  background-color: var(--color-bg-app);
+  overflow: auto;
+  box-shadow: 0 5px 10px 2px var(--input-shadow);
+  border-radius: var(--app-border-radius);
+}
+
+.copyBtn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

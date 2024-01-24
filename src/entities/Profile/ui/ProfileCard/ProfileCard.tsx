@@ -6,7 +6,7 @@ import Avatar from 'shared/ui/Avatar/Avatar';
 import Input from 'shared/ui/Input/Input';
 import Loader from 'shared/ui/Loader/Loader';
 import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
-import { Profile } from '../../model/types/profile';
+import { Profile, formFields } from '../../model/types/profile';
 import s from './ProfileCard.module.css';
 
 export interface ProfileCardProps {
@@ -62,23 +62,21 @@ const ProfileCard = (props: ProfileCardProps) => {
         </div>
       )}
       <div className={s.inputWrapper}>
-        {['first', 'lastname', 'age', 'city', 'username', 'avatar'].map(
-          (item: string) => {
-            return (
-              <Input
-                className={cn(s.input, className)}
-                key={item}
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                value={data ? data[item] : ''}
-                placeholder={t(item)}
-                onChange={onChangeInput}
-                readonly={readonly}
-                name={item}
-              />
-            );
-          },
-        )}
+        {formFields.map((item: string) => {
+          return (
+            <Input
+              className={cn(s.input, className)}
+              key={item}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              value={data ? data[item] : ''}
+              placeholder={t(item)}
+              onChange={onChangeInput}
+              readonly={readonly}
+              name={item}
+            />
+          );
+        })}
         <CurrencySelect
           readonly={readonly}
           value={data?.currency}

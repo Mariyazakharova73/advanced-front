@@ -1,0 +1,9 @@
+.ArticleImageBlockComponent {
+  text-align: center;
+}
+
+.img {
+  max-width: 100%;
+  box-shadow: 0 5px 10px 2px var(--input-shadow);
+  border-radius: var(--app-border-radius);
+}

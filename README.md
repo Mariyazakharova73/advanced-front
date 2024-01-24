@@ -14,11 +14,9 @@ NotFoundPage
 Верстка на гридах. (без flex).
 Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
 Модальное окно создано с использованием React Portal. (lazy loading modal). 
-
-<!-- 
-loginReducer, profileReducer, articleDetailsReducer добавляются асинхроно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
-Страница профиля защищена от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
-Реализована возможность просмотра статей и комментариев. Также можно добавлять новые комментарии к статье. -->
+loginReducer, profileReducer, articleDetailsReducer добавляются асинхронно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
+Страницы профиля и Статей защищены от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
+Реализована возможность просмотра статей и комментариев. Также можно добавлять новые комментарии к статье. 
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ErrorBoundary, ThemeProvider, StoreProvider, styles, types, App.tsx

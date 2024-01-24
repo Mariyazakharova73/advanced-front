@@ -23,15 +23,15 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {
-    store.dispatch({ type: '@INIT' });
     Object.entries(reducers).forEach(([name, reducer]) => {
+      store.dispatch({ type: `@INIT ${name}` });
       store.reducerManager.add(name as StateSchemaKey, reducer);
     });
 
     return () => {
       if (removeAfterUnMount) {
-        store.dispatch({ type: '@DESTROY' });
         Object.entries(reducers).forEach(([name, reducer]) => {
+          store.dispatch({ type: `@DESTROY ${name}` });
           store.reducerManager.remove(name as StateSchemaKey);
         });
       }
@@ -43,4 +43,3 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
 };
 
 export default DynamicModuleLoader;
-

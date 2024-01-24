@@ -1,0 +1,41 @@
+.ArticleDetails {
+  min-height: 100%;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.skeleton {
+  margin-top: 15px;
+}
+
+.articleInfo {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: start;
+}
+
+.avatarWrapper {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+}
+
+.icon {
+  stroke: var(--color-primary);
+}
+
+.block {
+  margin-top: 16px;
+}
+
+.commentTitle {
+  margin-top: 20px;
+}

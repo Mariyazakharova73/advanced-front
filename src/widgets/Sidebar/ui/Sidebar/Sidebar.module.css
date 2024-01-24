@@ -1,5 +1,5 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin));
+  height: var(--app-height);
   width: var(--sidebar-width);
   background: var(--color-primary);
   transition: var(--app-transition);

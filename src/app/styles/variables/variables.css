@@ -10,7 +10,7 @@
 
   --font-size-xl: 32px;
   --font-line-xl: 40px;
-  --font-xl: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
   --app-border-radius: 10px;
   --app-padding: 20px;
@@ -27,4 +27,9 @@
   --modal-z-index: 10;
   --overlay-color: rgba(0 0 0 / 0.6);
   --input-shadow: 0px 5px 10px 2px var(--color-shadow);
+
+  /* fot sidebar and .page-wrapper */
+  --app-height: calc(
+    100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin)
+  );
 }
