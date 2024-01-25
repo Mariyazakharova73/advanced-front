@@ -1,16 +1,16 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema'
-import { type Comment } from 'entities/Comment'
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { type ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
+import { type Comment } from 'entities/Comment';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
-Comment[],
-string | undefined,
-ThunkConfig<string>
+  Comment[],
+  string | undefined,
+  ThunkConfig<string>
 >('articleDetails/fetchCommentsByArticleId', async (articleId, thunkAPI) => {
-  const { extra, rejectWithValue } = thunkAPI
+  const { extra, rejectWithValue } = thunkAPI;
 
   if (!articleId) {
-    return rejectWithValue('error')
+    return rejectWithValue('error');
   }
   try {
     const res = await extra.api.get<Comment[]>('/comments/', {
@@ -18,12 +18,12 @@ ThunkConfig<string>
         articleId,
         _expand: 'user',
       },
-    })
+    });
     if (!res.data) {
-      throw new Error()
+      throw new Error();
     }
-    return res.data
+    return res.data;
   } catch (e) {
-    return rejectWithValue('error')
+    return rejectWithValue('error');
   }
-})
+});

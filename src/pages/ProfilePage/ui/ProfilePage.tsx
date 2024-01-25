@@ -13,13 +13,15 @@ import {
 } from 'entities/Profile';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import s from './ProfilePage.module.css';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
@@ -35,6 +37,7 @@ const initialReducers: ReducerList = {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profilePage');
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   const formData = useSelector(getProfileForm);
   const error = useSelector(getProfileError);
@@ -42,12 +45,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const readonly = useSelector(getProfileReadOnly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
-  useEffect(() => {
-    // убрать запрос для сторибука
-    if (!process.env.STORYBOOK_APP) {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeInput = useCallback(
     (value: string, name?: string) => {

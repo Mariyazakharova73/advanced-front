@@ -9,6 +9,14 @@
   fill-opacity: 0.7;
 }
 
+.Button:disabled {
+  cursor: not-allowed;
+}
+
+.Button:hover:disabled {
+  opacity: 0.4;
+}
+
 .primary,
 .primaryLight,
 .primaryRed {

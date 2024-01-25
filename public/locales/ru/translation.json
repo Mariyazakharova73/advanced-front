@@ -8,9 +8,13 @@
   "enter-password": "Введите пароль",
   "title-form": "Форма авторизации",
   "logout": "Выйти",
-
   "profile": "Профиль",
   "main": "Главная",
   "about": "О нас",
-  "articles": "Статьи"
+  "articles": "Статьи",
+  "articlesPage": {
+    "commentText": "Введите текст комментария"
+  },
+  "commentText": "Введите текст комментария",
+  "sendBtn": "Отправить"
 }

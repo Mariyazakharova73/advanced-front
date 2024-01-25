@@ -1,0 +1,13 @@
+.AddCommentForm {
+  box-shadow: 0 5px 10px 2px var(--input-shadow);
+  border-radius: var(--app-border-radius);
+  background-color: var(--color-bg-app);
+  padding: 20px;
+  display: grid;
+  align-items: center;
+  gap: 10px;
+}
+
+.bth {
+  margin-left: auto;
+}

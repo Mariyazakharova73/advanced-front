@@ -11,5 +11,10 @@
   "title-form": "Authorization form",
   "logout": "Logout",
   "profile": "Profile",
-  "articles": "Articles"
+  "articles": "Articles",
+  "articlesPage": {
+    "commentText": "\nEnter comment text"
+  },
+  "commentText": "Enter comment text",
+  "sendBtn": "Send"
 }

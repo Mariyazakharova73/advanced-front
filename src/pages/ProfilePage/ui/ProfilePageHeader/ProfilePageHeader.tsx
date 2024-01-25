@@ -1,5 +1,11 @@
 import cn from 'classnames';
-import { getProfileReadOnly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+  getProfileData,
+  getProfileReadOnly,
+  profileActions,
+  updateProfileData,
+} from 'entities/Profile';
+import { getUserAuthData } from 'entities/User';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -17,6 +23,9 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
   const { className } = props;
   const readonly = useSelector(getProfileReadOnly);
   const dispatch = useAppDispatch();
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const canEdit = authData?.id === profileData?.id;
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadOnly(false));
@@ -33,20 +42,25 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
   return (
     <div className={cn(s.ProfilePageHeader, className)}>
       <Text title={t('profileTitle')} />
-      {readonly ? (
-        <Button onClick={onEdit} className={s.button}>
-          {t('edit')}
-        </Button>
-      ) : (
-        <div className={s.buttonsWrapper}>
-          <Button theme={ButtonTheme.PRIMARY_RED} onClick={onCancel} className={s.button}>
-            {t('cancel')}
+      {canEdit &&
+        (readonly ? (
+          <Button onClick={onEdit} className={s.button}>
+            {t('edit')}
           </Button>
-          <Button onClick={onSave} className={s.button}>
-            {t('save')}
-          </Button>
-        </div>
-      )}
+        ) : (
+          <div className={s.buttonsWrapper}>
+            <Button
+              theme={ButtonTheme.PRIMARY_RED}
+              onClick={onCancel}
+              className={s.button}
+            >
+              {t('cancel')}
+            </Button>
+            <Button onClick={onSave} className={s.button}>
+              {t('save')}
+            </Button>
+          </div>
+        ))}
     </div>
   );
 };

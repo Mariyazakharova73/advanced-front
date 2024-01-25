@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import CommentCard from './CommentCard'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import CommentCard from './CommentCard';
 
 const meta = {
-  title: 'entities/Comment/CommentCard',
+  title: 'entities/CommentCard',
   component: CommentCard,
 
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta<typeof CommentCard>
+} as Meta<typeof CommentCard>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {
@@ -25,9 +25,9 @@ export const Normal: Story = {
       user: { id: '1', username: 'Mary' },
     },
   },
-}
+};
 
-Normal.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})]
+Normal.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];
 
 export const Loading: Story = {
   args: {
@@ -36,8 +36,8 @@ export const Loading: Story = {
       text: 'hello world',
       user: { id: '1', username: 'Mary' },
     },
-    isLoading: true
+    isLoading: true,
   },
-}
+};
 
-Loading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})]
+Loading.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({})];

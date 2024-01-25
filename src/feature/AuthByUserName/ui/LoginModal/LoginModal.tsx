@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { FC, Suspense } from 'react';
 import Loader from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal';
-import { LoginFormLazy } from '../LoginForm/LoginForm.async';
+import { LoginFormLazy } from '../LoginForm/LoginForm.lazy';
 import s from './LoginModal.module.css';
 
 export interface LoginModalProps {

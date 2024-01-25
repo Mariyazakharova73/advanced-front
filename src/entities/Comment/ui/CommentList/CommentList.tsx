@@ -29,12 +29,7 @@ const CommentList: FC<CommentListProps> = ({ className, isLoading, comments }) =
     <div className={cn(s.CommentList, className)}>
       {comments?.length ? (
         comments.map(comment => (
-          <CommentCard
-            className={s.comment}
-            key={comment.id}
-            comment={comment}
-         
-          />
+          <CommentCard className={s.comment} key={comment.id} comment={comment} />
         ))
       ) : (
         <Text text={t('no-comments')} />
