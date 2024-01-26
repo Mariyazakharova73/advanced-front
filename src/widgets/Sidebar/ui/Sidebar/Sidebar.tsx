@@ -4,10 +4,11 @@ import { FC, memo, useState } from 'react';
 import { ReactComponent as ArrowLeft } from 'shared/assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'shared/assets/icons/arrow-right.svg';
 
+import { useSelector } from 'react-redux';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
+import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { SidebarItemsList } from '../../model/items';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import s from './Sidebar.module.css';
 
@@ -16,8 +17,10 @@ export interface SidebarProps {
 }
 
 const Sidebar: FC<SidebarProps> = props => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
   const { className } = props;
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+
+  const sidebarItemsList = useSelector(getSidebarItems);
 
   const onToggle = () => {
     setCollapsed(prev => !prev);
@@ -26,7 +29,7 @@ const Sidebar: FC<SidebarProps> = props => {
   return (
     <div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
       <div className={s.menLinks}>
-        {SidebarItemsList.map(item => {
+        {sidebarItemsList.map(item => {
           return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
         })}
       </div>
