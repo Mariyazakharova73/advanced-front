@@ -1,6 +1,5 @@
 import { configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
-import { type NavigateFunction } from 'react-router-dom';
 import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { ThunkExtraArg, type StateSchema } from './StateSchema';
@@ -9,7 +8,6 @@ import { isDev } from 'shared/const/common';
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: NavigateFunction,
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -19,7 +17,6 @@ export function createReduxStore(
   const reducerManager = createReducerManager(rootReducers);
 
   const extraArg: ThunkExtraArg = {
-    navigate,
     api: $api,
   };
 

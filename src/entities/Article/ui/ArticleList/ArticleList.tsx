@@ -19,17 +19,14 @@ const ArticleList: FC<ArticleListProps> = props => {
     return <ArticleListItem key={article.id} view={view} article={article} />;
   };
 
-  if (isLoading) {
-    return (
-      <div className={s.loaderWrapper}>
-        <Loader />
-      </div>
-    );
-  }
-
   return (
     <div className={cn(s.ArticleList, className, s[view])}>
       {articles.length > 0 ? articles.map(item => renderArticle(item)) : null}
+      {isLoading && (
+        <div className={s.loaderWrapper}>
+          <Loader />
+        </div>
+      )}
     </div>
   );
 };

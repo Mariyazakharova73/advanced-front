@@ -8,3 +8,14 @@ export const getArticlesPagesError = (state: StateSchema) => state.ArticlesPage?
 
 export const getArticlesPageView = (state: StateSchema) =>
   state.ArticlesPage?.view || ArticleView.SMALL;
+
+export const getArticlesPageNum = (state: StateSchema) => state.ArticlesPage?.page || 1;
+
+export const getArticlesPageLimit = (state: StateSchema) =>
+  state.ArticlesPage?.limit || 9;
+
+export const getArticlesPageHasMore = (state: StateSchema) =>
+  state.ArticlesPage?.hasMore || true;
+
+export const getArticlesPageInited = (state: StateSchema) =>
+  state.ArticlesPage?._inited || false;

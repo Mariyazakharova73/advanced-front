@@ -22,6 +22,7 @@ import DynamicModuleLoader, {
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import Page from 'shared/ui/Page/Page';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import s from './ProfilePage.module.css';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
@@ -84,7 +85,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnMount>
-      <div className={cn(s.ProfilePage, className)}>
+      <Page className={cn(s.ProfilePage, className)}>
         <ProfilePageHeader />
         {validateErrors?.length
           ? validateErrors.map(err => (
@@ -104,7 +105,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

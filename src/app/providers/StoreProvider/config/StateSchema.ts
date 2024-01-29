@@ -13,8 +13,6 @@ import { AddCommentFormSchema } from 'feature/addCommentForm';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
-import { type NavigateFunction } from 'react-router-dom';
-
 export interface StateSchema {
   user: UserSchema;
 
@@ -28,6 +26,7 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager;
@@ -38,11 +37,12 @@ export interface ReducerManager {
   reduce: (state: StateSchema, action: AnyAction) => any;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
+  // true - reducer вмонтирован
+  getMountedReducers: () => MountedReducers;
 }
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate?: NavigateFunction;
 }
 
 // 3 арг. в createAsyncThunk

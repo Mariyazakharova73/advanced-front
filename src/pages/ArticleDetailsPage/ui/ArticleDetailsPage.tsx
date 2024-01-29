@@ -13,6 +13,7 @@ import DynamicModuleLoader, {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import Button from 'shared/ui/Button/Button';
+import Page from 'shared/ui/Page/Page';
 import Text from 'shared/ui/Text/Text';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { addCommentForArticleThunk } from '../model/services/addCommentForArticle/addCommentForArticle';
@@ -55,18 +56,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }, [navigate]);
 
   if (!id) {
-    return <div className={cn(s.ArticleDetails, className)}>{t('articleNotFound')}</div>;
+    return (
+      <Page className={cn(s.ArticleDetails, className)}>{t('articleNotFound')}</Page>
+    );
   }
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnMount>
-      <div className={cn(s.ArticleDetailsPage, className)}>
+      <Page className={cn(s.ArticleDetailsPage, className)}>
         <Button onClick={onBackToList}>{t('back')}</Button>
         <ArticleDetails id={id} />
         <Text title={t('comments')} className={s.commentTitle} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={isLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

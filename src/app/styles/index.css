@@ -21,15 +21,5 @@ body {
 }
 
 .page-wrapper {
-  padding: var(--app-padding);
-  background: var(--color-bg);
 
-  /* скорлл внутри страницы */
-  height: var(--app-height);
-  overflow-y: auto;
-
-  /* тень по нижней границе */
-  margin: var(--app-margin) 0 0 var(--app-margin);
-  border-radius: var(--app-border-radius);
-  box-shadow: -5px -5px 5px -5px var(--color-shadow);
 }

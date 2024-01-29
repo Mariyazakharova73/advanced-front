@@ -34,7 +34,7 @@ const Navbar = ({ className }: NavbarProps) => {
   }, [dispatch]);
 
   return (
-    <div className={cn(s.Navbar, className)}>
+    <header className={cn(s.Navbar, className)}>
       <AppLink to="/" theme={AppLinkTheme.DARK}>
         <AtomIcon className={s.icon} />
       </AppLink>
@@ -50,7 +50,7 @@ const Navbar = ({ className }: NavbarProps) => {
         )}
       </div>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} />}
-    </div>
+    </header>
   );
 };
 

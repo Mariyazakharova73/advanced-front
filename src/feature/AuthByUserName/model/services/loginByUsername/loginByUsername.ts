@@ -29,7 +29,7 @@ export const loginByUsername = createAsyncThunk<
       dispatch(userActions.setAuthData(res.data));
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      extra?.navigate(AppRoutes.ABOUT);
+      // extra?.navigate(AppRoutes.ABOUT);
 
       return res.data;
     } catch (e) {

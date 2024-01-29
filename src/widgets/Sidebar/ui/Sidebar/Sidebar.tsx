@@ -27,7 +27,7 @@ const Sidebar: FC<SidebarProps> = props => {
   };
 
   return (
-    <div className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
+    <menu className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
       <div className={s.menLinks}>
         {sidebarItemsList.map(item => {
           return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
@@ -44,7 +44,7 @@ const Sidebar: FC<SidebarProps> = props => {
           </Button>
         </div>
       </div>
-    </div>
+    </menu>
   );
 };
 
