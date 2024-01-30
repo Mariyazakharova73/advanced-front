@@ -9,12 +9,14 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ProfileSchema } from 'entities/Profile';
 import { type UserSchema } from 'entities/User';
 import { LoginSchema } from 'feature/AuthByUserName';
+import { ScrollSaveSchema } from 'feature/ScrollSave';
 import { AddCommentFormSchema } from 'feature/addCommentForm';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
   user: UserSchema;
+  scrollSave: ScrollSaveSchema;
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema;
