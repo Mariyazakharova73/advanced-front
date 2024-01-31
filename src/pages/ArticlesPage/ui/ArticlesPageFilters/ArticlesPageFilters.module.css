@@ -1,0 +1,13 @@
+.ArticlesPageFilters {
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.search {
+  margin-top: 5px;
+}

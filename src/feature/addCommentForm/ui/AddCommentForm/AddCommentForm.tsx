@@ -50,7 +50,7 @@ const AddCommentForm: FC<AddCommentsFormProps> = ({ className, onSendComment }) 
       <div className={cn(s.AddCommentForm, className)}>
         <Input
           className={s.input}
-          placeholder={t('commentText')}
+          label={t('commentText')}
           value={text}
           onChange={onCommentTextChange}
         />

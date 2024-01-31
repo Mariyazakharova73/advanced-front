@@ -70,7 +70,7 @@ const ProfileCard = (props: ProfileCardProps) => {
               // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               value={data ? data[item] : ''}
-              placeholder={t(item)}
+              label={t(item)}
               onChange={onChangeInput}
               readonly={readonly}
               name={item}

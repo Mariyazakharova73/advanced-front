@@ -5,6 +5,12 @@ export enum ArticleView {
   SMALL = 'SMALL',
 }
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt',
+}
+
 export interface Article {
   id: string;
   title: string;

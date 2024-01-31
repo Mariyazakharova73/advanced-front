@@ -1,29 +1,24 @@
 import cn from 'classnames';
-import { memo, useMemo, type ChangeEvent, type FC } from 'react';
+import { memo, useMemo, type ChangeEvent } from 'react';
 import s from './Select.module.css';
 
-interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string> {
+  value: T;
   content: string;
 }
 
-export interface SelectProps {
+export interface SelectProps<T extends string> {
   className?: string;
   label?: string;
-  options?: SelectOption[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: SelectOption<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-const Select: FC<SelectProps> = ({
-  className,
-  label,
-  options,
-  onChange,
-  value,
-  readonly,
-}) => {
+const Select = <T extends string>(props: SelectProps<T>) => {
+  const { className, label, options, onChange, value, readonly } = props;
+
   const optionList = useMemo(() => {
     return options?.map(item => (
       <option className={s.option} value={item.value} key={item.value}>
@@ -34,7 +29,7 @@ const Select: FC<SelectProps> = ({
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e.target.value as T);
     }
   };
 
@@ -53,4 +48,4 @@ const Select: FC<SelectProps> = ({
   );
 };
 
-export default memo(Select);
+export default Select;

@@ -4,5 +4,12 @@
   "comments": "Comments",
   "no-comments": "No comments",
   "more": "Read more...",
-  "back": "Back to list"
+  "back": "Back to list",
+  "sort": "Sort by",
+  "search": "Search",
+  "asc": "ascending",
+  "desc": "descending",
+  "sorBytDate":"creation date",
+  "sortByTitle":"title",
+  "sortByViews":"views"
 }

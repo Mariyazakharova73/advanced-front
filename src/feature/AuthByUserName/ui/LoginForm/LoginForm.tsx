@@ -75,14 +75,14 @@ const LoginForm: FC<LoginFormProps> = props => {
               value={username}
               className={s.input}
               type="text"
-              placeholder={t('enter-username')}
+              label={t('enter-username')}
             />
             <Input
               value={password}
               onChange={onChangePassword}
               className={s.input}
               type="text"
-              placeholder={t('enter-password')}
+              label={t('enter-password')}
             />
           </>
         )}

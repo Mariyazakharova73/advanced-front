@@ -34,7 +34,6 @@ const Page = (props: PropsWithChildren<PageProps>) => {
   });
 
   const onScroll = useThrottle((e: UIEvent) => {
-    console.log('SCROLL')
     dispatch(
       scrollSaveActions.setScrollPosition({
         path: pathname,
@@ -46,7 +45,7 @@ const Page = (props: PropsWithChildren<PageProps>) => {
   return (
     <section ref={wrapperRef} className={cn(s.Page, className)} onScroll={onScroll}>
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div ref={triggerRef} className={s.trigger} /> : null}
     </section>
   );
 };

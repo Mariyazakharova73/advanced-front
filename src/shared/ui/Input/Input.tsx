@@ -13,6 +13,7 @@ export interface InputProps extends HTMLInputProps {
   value?: string;
   onChange?: (value: string, name?: string) => void;
   placeholder?: string;
+  label?: string;
   autoFocus?: boolean;
   readonly?: boolean;
   name?: string;
@@ -26,6 +27,7 @@ const Input: FC<InputProps> = props => {
     readonly,
     type = 'text',
     placeholder,
+    label,
     name,
     ...otherProps
   } = props;
@@ -40,8 +42,9 @@ const Input: FC<InputProps> = props => {
 
   return (
     <div className={cn(s.InputWrapper, className, mods)}>
-      {placeholder && <div className={s.placeholder}>{placeholder}</div>}
+      {label && <div className={s.label}>{label}</div>}
       <input
+        placeholder={placeholder}
         readOnly={readonly}
         className={s.input}
         type={type}

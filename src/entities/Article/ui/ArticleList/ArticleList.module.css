@@ -1,19 +1,27 @@
 .ArticleList {
+  margin-top: 5px;
+}
+
+.SMALL {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   justify-items: center;
 }
 
 .BIG {
   display: grid;
+  gap: 20px;
   grid-template-columns: 1fr;
   justify-items: stretch;
 }
 
 .loaderWrapper {
   display: grid;
-  align-items: center;
   justify-content: center;
+}
+
+.text {
+  margin-top: 20px;
   height: 100vh;
 }

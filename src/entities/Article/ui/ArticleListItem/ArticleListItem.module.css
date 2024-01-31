@@ -71,7 +71,11 @@
   text-overflow: ellipsis;
 }
 
-/* view ===BIG */
+.skSmallTitle {
+  margin-top: 10px;
+}
+
+/* view === BIG */
 
 .bigCard {
   transition: all 0.5s ease;
@@ -86,9 +90,6 @@
   display: grid;
   grid-template-columns: 30px auto 1fr;
   gap: 10px;
-}
-
-.username {
 }
 
 .textBlock {
@@ -120,4 +121,8 @@
   gap: 10px;
   align-items: center;
   margin-left: auto;
+}
+
+.skBigTitle {
+  margin-top: 20px;
 }

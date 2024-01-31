@@ -11,3 +11,9 @@
   border-radius: var(--app-border-radius);
   box-shadow: -5px -5px 5px -5px var(--color-shadow);
 }
+
+.trigger {
+  height: 20px;
+  margin: 10px;
+  background-color: blue;
+}
