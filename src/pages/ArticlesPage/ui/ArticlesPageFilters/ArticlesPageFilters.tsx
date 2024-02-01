@@ -1,11 +1,12 @@
 import cn from 'classnames';
 import {
+  ArtcleTypeTabs,
   ArticleSortField,
   ArticleSortSelector,
   ArticleView,
   ArticleViewSelector,
 } from 'entities/Article';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList';
+import { ArticleType } from 'entities/Article/model/types/article';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -18,8 +19,10 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articles';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/ArticlePageSlice';
 import s from './ArticlesPageFilters.module.css';
 
@@ -37,6 +40,7 @@ const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = props => {
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
   const search = useSelector(getArticlesPageSearch);
+  const type = useSelector(getArticlesPageType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }));
@@ -69,6 +73,15 @@ const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = props => {
     [dispatch, fetchData],
   );
 
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlesPageActions.setType(value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
+
   const onChangeSearch = useCallback(
     (newSearch: string) => {
       dispatch(articlesPageActions.setSearch(newSearch));
@@ -92,6 +105,7 @@ const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = props => {
       <Card className={s.search}>
         <Input placeholder={t('search')} onChange={onChangeSearch} value={search} />
       </Card>
+      <ArtcleTypeTabs value={type} onChangeType={onChangeType} />
     </div>
   );
 };

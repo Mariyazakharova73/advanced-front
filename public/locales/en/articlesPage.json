@@ -11,5 +11,9 @@
   "desc": "descending",
   "sorBytDate":"creation date",
   "sortByTitle":"title",
-  "sortByViews":"views"
+  "sortByViews":"views",
+  "it": "It",
+  "economics": "Economy",
+  "science": "Science",
+  "all": "Все статьи"
 }

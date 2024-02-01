@@ -9,7 +9,11 @@
   "search": "Поиск",
   "asc": "возрастанию",
   "desc": "убыванию",
-  "sorBytDate":"дате создания",
-  "sortByTitle":"названию",
-  "sortByViews":"просмотрам"
+  "sorBytDate": "дате создания",
+  "sortByTitle": "названию",
+  "sortByViews": "просмотрам",
+  "it": "Айти",
+  "economics": "Экономика",
+  "science": "Наука",
+  "all": "Все статьи"
 }

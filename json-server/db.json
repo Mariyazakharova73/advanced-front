@@ -159,7 +159,7 @@
       "createdAt": "15.03.2020",
       "userId": "2",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -225,7 +225,7 @@
       "createdAt": "08.10.2020",
       "userId": "2",
       "type": [
-        "Data Science"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -253,7 +253,7 @@
       "createdAt": "09.11.2020",
       "userId": "1",
       "type": [
-        "Machine Learning"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -309,7 +309,7 @@
       "createdAt": "11.07.2021",
       "userId": "1",
       "type": [
-        "Cybersecurity"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -337,7 +337,7 @@
       "createdAt": "12.09.2021",
       "userId": "2",
       "type": [
-        "Data Science"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -365,7 +365,7 @@
       "createdAt": "13.08.2021",
       "userId": "1",
       "type": [
-        "Mobile Development"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -393,7 +393,7 @@
       "createdAt": "14.05.2021",
       "userId": "2",
       "type": [
-        "Cloud Computing"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -421,7 +421,7 @@
       "createdAt": "15.04.2021",
       "userId": "1",
       "type": [
-        "AI"
+        "IT"
       ],
       "blocks": [
         {
@@ -449,7 +449,7 @@
       "createdAt": "16.11.2021",
       "userId": "2",
       "type": [
-        "Web Development"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -477,7 +477,7 @@
       "createdAt": "17.12.2021",
       "userId": "1",
       "type": [
-        "Internet of Things"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -533,7 +533,7 @@
       "createdAt": "19.03.2022",
       "userId": "1",
       "type": [
-        "Cybersecurity"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -561,7 +561,7 @@
       "createdAt": "20.07.2022",
       "userId": "2",
       "type": [
-        "Augmented Reality"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -617,7 +617,7 @@
       "createdAt": "22.06.2022",
       "userId": "2",
       "type": [
-        "AI"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -645,7 +645,7 @@
       "createdAt": "08.07.2022",
       "userId": "2",
       "type": [
-        "Data Science"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -673,7 +673,7 @@
       "createdAt": "09.08.2022",
       "userId": "1",
       "type": [
-        "Machine Learning"
+        "IT"
       ],
       "blocks": [
         {
@@ -701,7 +701,7 @@
       "createdAt": "10.09.2022",
       "userId": "2",
       "type": [
-        "Web Dev"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -729,7 +729,7 @@
       "createdAt": "11.10.2022",
       "userId": "1",
       "type": [
-        "Cybersecurity"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -757,7 +757,7 @@
       "createdAt": "12.11.2022",
       "userId": "2",
       "type": [
-        "Data Science"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -785,7 +785,7 @@
       "createdAt": "13.12.2022",
       "userId": "1",
       "type": [
-        "Mobile Dev"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -813,7 +813,7 @@
       "createdAt": "31.12.2022",
       "userId": "2",
       "type": [
-        "Cloud Computing"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -841,7 +841,7 @@
       "createdAt": "10.01.2023",
       "userId": "1",
       "type": [
-        "AI"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -869,7 +869,7 @@
       "createdAt": "16.02.2023",
       "userId": "2",
       "type": [
-        "Web Dev"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -897,7 +897,7 @@
       "createdAt": "17.03.2023",
       "userId": "1",
       "type": [
-        "Internet of Things"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -1123,6 +1123,18 @@
       "userId": "1",
       "text": "jjjj",
       "id": "VzAc2PG"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "jjjj",
+      "id": "LBXHGmn"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "hhhh",
+      "id": "T2yPgsF"
     }
   ],
   "users": [

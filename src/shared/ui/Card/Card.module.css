@@ -1,6 +1,13 @@
 .Card {
   padding: 15px;
   border-radius: var(--app-border-radius);
-  background-color: var(--color-bg-app);
   box-shadow: 0 5px 10px 2px var(--input-shadow);
+}
+
+.normal {
+  background-color: var(--color-bg-app);
+}
+
+.outlined {
+  border: 1px solid var(--color-primary);
 }
