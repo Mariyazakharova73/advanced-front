@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import Text from 'shared/ui/Text/Text';
 import { Article, ArticleView } from '../../model/types/article';
@@ -12,10 +12,11 @@ export interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const ArticleList: FC<ArticleListProps> = props => {
-  const { className, articles, isLoading, view } = props;
+  const { className, articles, isLoading, view, target } = props;
   const { t } = useTranslation('articlesPage');
 
   // if (error) {
@@ -45,7 +46,7 @@ const ArticleList: FC<ArticleListProps> = props => {
   return (
     <div className={cn(s.ArticleList, className, s[view])}>
       {articles.map(article => (
-        <ArticleListItem article={article} view={view} key={article.id} />
+        <ArticleListItem article={article} view={view} key={article.id} target={target} />
       ))}
       {isLoading && getSkeletons(view)}
     </div>

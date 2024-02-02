@@ -4,3 +4,11 @@
 .commentTitle {
   margin-top: 20px;
 }
+
+.recommendations {
+  margin-top: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  grid-auto-flow: column;
+  max-width: 500px;
+}

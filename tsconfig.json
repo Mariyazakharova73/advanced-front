@@ -20,5 +20,5 @@
     // Для абсолютного импорта
     "baseUrl": "src",
   },
-  "include": ["src", "config/storybook"]
+  "include": ["src", "config/storybook", "src/pages/ArticleDetailsPage/model/types/ArticleRecommendationsSchema.ts"]
 }

@@ -25,11 +25,8 @@ const articleDetailsCommentsSlice = createSlice({
     isLoading: false,
     error: undefined,
     // из EntityState
-    ids: ['1', '2'],
-    entities: {
-      '1': { id: '1', text: 'jjjff', user: { id: '1', username: 'hfhhhff' } },
-      '2': { id: '2', text: 'jjjff', user: { id: '2', username: 'Pavel' } },
-    },
+    ids: [],
+    entities: {},
   }),
   reducers: {},
   extraReducers: builder => {

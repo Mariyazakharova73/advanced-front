@@ -7,6 +7,8 @@
 body {
   font: var(--font-m);
   color: var(--color-text);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .app {
@@ -18,8 +20,4 @@ body {
 .content-page {
   display: grid;
   grid-template-columns: auto 1fr;
-}
-
-.page-wrapper {
-
 }
