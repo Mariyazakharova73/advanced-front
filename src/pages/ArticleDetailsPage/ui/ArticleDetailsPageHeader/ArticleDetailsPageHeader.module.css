@@ -1,0 +1,15 @@
+.ArticleDetailsPageHeader {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.backBtn{
+  max-width: 150px;
+}
+
+.editBtn {
+  margin-left: auto;
+}
+

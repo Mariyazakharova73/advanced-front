@@ -12,9 +12,7 @@
   "main": "Главная",
   "about": "О нас",
   "articles": "Статьи",
-  "articlesPage": {
-    "commentText": "Введите текст комментария"
-  },
   "commentText": "Введите текст комментария",
-  "sendBtn": "Отправить"
+  "sendBtn": "Отправить",
+  "createArticle": "Создать статью"
 }

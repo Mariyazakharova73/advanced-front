@@ -1,3 +1,4 @@
+import { getArticleDetailsData } from './model/selectors/articleDetails';
 import {
   Article,
   ArticleSortField,
@@ -18,6 +19,7 @@ export {
   ArticleType,
   ArticleView,
   ArticleViewSelector,
+  getArticleDetailsData,
   type Article,
   type ArticleDetailsSchema,
 };

@@ -15,6 +15,13 @@
   box-shadow: 0 7px 5px -5px var(--color-shadow);
 }
 
+.links {
+  gap: 50px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
 .icon {
   transition: var(--app-transition);
   stroke: var(--color-link);

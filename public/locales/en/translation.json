@@ -12,9 +12,7 @@
   "logout": "Logout",
   "profile": "Profile",
   "articles": "Articles",
-  "articlesPage": {
-    "commentText": "\nEnter comment text"
-  },
   "commentText": "Enter comment text",
-  "sendBtn": "Send"
+  "sendBtn": "Send",
+  "editArticle": "Create article"
 }

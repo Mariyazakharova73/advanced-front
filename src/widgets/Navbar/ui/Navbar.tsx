@@ -5,10 +5,11 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ReactComponent as AtomIcon } from 'shared/assets/icons/atom.svg';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import s from './Navbar.module.css';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface NavbarProps {
   className?: string;
@@ -35,10 +36,14 @@ const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <header className={cn(s.Navbar, className)}>
-      <AppLink to="/" theme={AppLinkTheme.DARK}>
+      <AppLink to={RoutePath.main} theme={AppLinkTheme.DARK}>
         <AtomIcon className={s.icon} />
       </AppLink>
+
       <div className={s.links}>
+        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.LIGHT}>
+          {t('createArticle')}
+        </AppLink>
         {authData ? (
           <Button theme={ButtonTheme.OUTLINE_LIGHT} onClick={onLogout}>
             {t('logout')}
