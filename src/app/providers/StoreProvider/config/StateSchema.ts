@@ -40,6 +40,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   reduce: (state: StateSchema, action: AnyAction) => any;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;

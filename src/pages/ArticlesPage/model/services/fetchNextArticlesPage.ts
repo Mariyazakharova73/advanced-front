@@ -19,6 +19,7 @@ export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<st
         dispatch(fetchArticlesList());
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
       return rejectWithValue('error');
     }

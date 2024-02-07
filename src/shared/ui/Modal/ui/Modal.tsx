@@ -95,6 +95,7 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
             role="button"
             tabIndex={0}
             onClick={onContentClick}
+            // eslint-disable-next-line no-console
             onKeyDown={() => console.log('test')}
           >
             {children}

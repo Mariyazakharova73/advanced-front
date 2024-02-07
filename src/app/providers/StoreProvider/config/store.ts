@@ -1,10 +1,10 @@
 import { configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
+import { scrollSaveReducer } from 'feature/ScrollSave/model/slices/ScrollSaveSlice';
 import { $api } from 'shared/api/api';
 import { isDev } from 'shared/const/common';
 import { createReducerManager } from './reducerManager';
 import { ThunkExtraArg, type StateSchema } from './StateSchema';
-import { scrollSaveReducer } from 'feature/ScrollSave/model/slices/ScrollSaveSlice';
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -23,6 +23,7 @@ export function createReduxStore(
   };
 
   const store = configureStore({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     reducer: reducerManager.reduce as Reducer<any>,
     devTools: isDev,
     preloadedState: initialState,

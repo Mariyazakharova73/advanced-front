@@ -25,6 +25,7 @@ export function createReducerManager(
     reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state };
+        // eslint-disable-next-line prefer-const
         for (let key of keysToRemove) {
           delete state[key];
         }

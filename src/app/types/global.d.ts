@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type DeepPartial<T> = T extends any[]
   ? T
   : T extends Record<string, any>

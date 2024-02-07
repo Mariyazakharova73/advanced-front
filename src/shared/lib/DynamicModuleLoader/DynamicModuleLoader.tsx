@@ -36,6 +36,7 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
 
     return () => {
       if (removeAfterUnMount) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         Object.entries(reducers).forEach(([name, reducer]) => {
           store.dispatch({ type: `@DESTROY ${name}` });
           store.reducerManager.remove(name as StateSchemaKey);

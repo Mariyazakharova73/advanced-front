@@ -51,6 +51,7 @@ export const fetchArticlesList = createAsyncThunk<
       }
       return res.data;
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
       return rejectWithValue('error');
     }
