@@ -1,8 +1,8 @@
 import { createEntityAdapter, createSlice, EntityId } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { Article } from 'entities/Article';
-import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations';
+import { type ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 
 const recommendationAdapter = createEntityAdapter<Article, EntityId>({
   selectId: (article: Article) => article.id,
@@ -26,7 +26,7 @@ const articleRecommendationsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(fetchArticleRecommendations.pending, (state, action) => {
+      .addCase(fetchArticleRecommendations.pending, state => {
         state.error = undefined;
         state.isLoading = true;
       })

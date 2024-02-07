@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { memo, useMemo, type ChangeEvent } from 'react';
+import { useMemo, type ChangeEvent } from 'react';
 import s from './Select.module.css';
 
 export interface SelectOption<T extends string> {

@@ -47,7 +47,6 @@ export const PrimaryLightThemeDark: Story = {
 
 PrimaryLightThemeDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-
 export const Clear: Story = {
   args: {
     children: 'Button',

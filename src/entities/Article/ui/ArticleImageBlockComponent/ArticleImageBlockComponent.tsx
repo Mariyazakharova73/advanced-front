@@ -1,8 +1,8 @@
+import cn from 'classnames';
 import { memo, type FC } from 'react';
 import Text, { TextAlign } from 'shared/ui/Text/Text';
 import { type ArticleImageBlock } from '../../model/types/article';
 import s from './ArticleImageBlockComponent.module.css';
-import cn from 'classnames'
 
 export interface ArticleImageBlockComponentProps {
   className?: string;

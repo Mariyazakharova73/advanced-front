@@ -8,7 +8,7 @@ export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<st
   'ArticlesPage/fetchNextArticlesPage',
 
   async (_, thunkAPI) => {
-    const { extra, rejectWithValue, getState, dispatch } = thunkAPI;
+    const { rejectWithValue, getState, dispatch } = thunkAPI;
 
     try {
       const hasMore = getArticlesPageHasMore(getState());

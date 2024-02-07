@@ -1,6 +1,6 @@
+import cn from 'classnames';
 import React, { memo, type FC } from 'react';
 import s from './Icon.module.css';
-import cn from 'classnames'
 
 export interface IconProps {
   className?: string;

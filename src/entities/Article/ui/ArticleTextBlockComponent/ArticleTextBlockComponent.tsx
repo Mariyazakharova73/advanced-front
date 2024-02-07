@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import { memo, type FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import Text from 'shared/ui/Text/Text';
 import { type ArticleTextBlock } from '../../model/types/article';
 import s from './ArticleTextBlockComponent.module.css';
@@ -14,7 +13,6 @@ const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = ({
   className,
   block,
 }) => {
-  const { t } = useTranslation();
   return (
     <div className={cn(s.ArticleTextBlockComponent, className)}>
       {block.title && <Text title={block.title} className={s.title} />}

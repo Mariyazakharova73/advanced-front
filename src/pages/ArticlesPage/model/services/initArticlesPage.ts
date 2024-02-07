@@ -14,7 +14,7 @@ export const initArticlesPage = createAsyncThunk<
   'ArticlesPage/initArticlesPage',
 
   async (searchParams, thunkAPI) => {
-    const { extra, rejectWithValue, getState, dispatch } = thunkAPI;
+    const { rejectWithValue, getState, dispatch } = thunkAPI;
 
     try {
       const inited = getArticlesPageInited(getState());
