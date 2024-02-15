@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
-import { ButtonTheme } from 'shared/ui/Button/Button';
+import { ButtonTheme } from '../../ui/Button/Button';
 import Button from '../Button/Button';
 import { ReactComponent as CopyIcon } from 'shared/assets/icons/copy.svg';
 import Icon from '../Icon/Icon';

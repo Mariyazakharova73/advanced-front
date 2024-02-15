@@ -7,7 +7,7 @@ import { ReactComponent as ArrowRight } from 'shared/assets/icons/arrow-right.sv
 import { useSelector } from 'react-redux';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
-import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
+import { getSidebarItems } from '../../../Sidebar/model/selectors/getSidebarItems';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import s from './Sidebar.module.css';

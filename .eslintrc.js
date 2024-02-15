@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react', 'i18next'],
+  plugins: ['@typescript-eslint', 'react', 'i18next', 'first-plugin'],
   rules: {
     'no-var': 'error',
     'react/react-in-jsx-scope': 'off',
@@ -40,6 +40,7 @@ module.exports = {
         jsxSingleQuote: false,
       },
     ],
+    'first-plugin/path-checker': 'error',
     //  для тестов и stories:
     // overrides: [
     //   {

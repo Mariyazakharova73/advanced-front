@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from '../../../Article/model/types/article';
 import Card from 'shared/ui/Card/Card';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
 import s from './ArticleListItem.module.css';

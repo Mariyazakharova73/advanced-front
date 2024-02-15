@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ArticleSortField } from 'entities/Article/model/types/article';
+import { ArticleSortField } from '../../../Article/model/types/article';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortOrder } from 'shared/types';

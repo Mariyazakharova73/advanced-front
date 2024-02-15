@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleType } from '../../../Article/model/types//article';
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs';

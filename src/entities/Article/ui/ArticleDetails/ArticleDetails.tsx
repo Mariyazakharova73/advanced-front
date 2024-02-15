@@ -3,10 +3,10 @@ import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDetails';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+} from '../../../Article/model/selectors/articleDetails';
+import { fetchArticleById } from '../../../Article/model/services/fetchArticleById';
+import { articleDetailsReducer } from '../../../Article/model/slice/articleDetailsSlice';
+import { ArticleBlock, ArticleBlockType } from '../../../Article/model/types/article';
 import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';

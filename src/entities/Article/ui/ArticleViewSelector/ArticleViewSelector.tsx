@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from '../../../Article/model/types/article';
 import { FC } from 'react';
 import { ReactComponent as MenuLineIcon } from 'shared/assets/icons/menu-line.svg';
 import { ReactComponent as MenuIcon } from 'shared/assets/icons/menu.svg';
