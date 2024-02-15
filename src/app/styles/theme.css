@@ -1,5 +1,5 @@
 .colors {
-  --color-primary: #158cc8;
+  --color-primary: rgba(0 115 247 / 0.88);
   --color-success: #52c41a;
   --color-warning: #faad14;
   --color-error: #ff4d4f;
@@ -15,7 +15,7 @@
 
 .app_light_theme {
   --color-text: #000;
-  --color-bg: #e8e8ea;
+  --color-bg: #e1e3e6;
   --color-bg-app: #fff;
 
   --color-shadow: rgba(34 60 80 / 0.6);
