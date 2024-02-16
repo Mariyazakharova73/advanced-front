@@ -29,7 +29,13 @@ module.exports = {
     'no-console': ['warn', { allow: ['warn', 'info', 'error'] }],
     // 'react/jsx-props-no-spreading': 'warn',
     // отсутствие переводов только в jsx
-    'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['to'] }],
+    'i18next/no-literal-string': [
+      'warn',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['to', 'direction', 'justify', 'align', 'gap'],
+      },
+    ],
     'max-len': ['error', { ignoreComments: true, code: 120 }],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
