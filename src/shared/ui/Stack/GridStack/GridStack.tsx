@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react';
 import s from './GridStack.module.css';
 
 export type GridStackJustify = 'start' | 'center' | 'end' | 'between' | 'stretch';
@@ -33,7 +33,8 @@ const gapClasses: Record<GridStackGap, string> = {
   32: s.gap32,
 };
 
-export interface GridStackProps extends HTMLAttributes<HTMLDivElement> {
+export interface GridStackProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   justify?: GridStackJustify;
   align?: GridStackAlign;

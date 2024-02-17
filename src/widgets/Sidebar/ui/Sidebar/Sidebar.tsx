@@ -28,7 +28,7 @@ const Sidebar: FC<SidebarProps> = props => {
   };
 
   return (
-    <menu className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
+    <aside className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
       <GridStack direction="row" justify="stretch" gap="8" className={s.menuLinks}>
         {sidebarItemsList.map(item => {
           return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
@@ -45,7 +45,7 @@ const Sidebar: FC<SidebarProps> = props => {
           </Button>
         </div>
       </div>
-    </menu>
+    </aside>
   );
 };
 

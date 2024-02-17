@@ -1174,10 +1174,10 @@
   "profile": [
     {
       "id": "1",
-      "first": "Marylll['",
-      "lastname": "React[[[",
-      "age": "150",
-      "currency": "EUR",
+      "first": "Mary",
+      "lastname": "React",
+      "age": "29",
+      "currency": "RUB",
       "country": "Belarus",
       "city": "Minsk",
       "username": "user",

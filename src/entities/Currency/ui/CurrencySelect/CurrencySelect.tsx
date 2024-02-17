@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import Select from 'shared/ui/Select/Select';
+import { HListBox } from 'shared/ui/HListBox/HListBox';
 import { Currency } from '../../model/types/currency';
 
 export interface CurrencySelectProps {
@@ -34,15 +34,23 @@ const CurrencySelect: FC<CurrencySelectProps> = ({
   );
 
   return (
-    <Select
+    <HListBox
       className={cn(className)}
-      label={t('currencyLabel')}
-      options={options}
-      value={value}
       onChange={onChangeHandler}
+      value={value}
+      items={options}
+      defaultValue={t('currencyLabel')}
       readonly={readonly}
-      // onChange={onChange}
     />
+    // <Select
+    //   className={cn(className)}
+    //   label={t('currencyLabel')}
+    //   options={options}
+    //   value={value}
+    //   onChange={onChangeHandler}
+    //   readonly={readonly}
+    //   // onChange={onChange}
+    // />
   );
 };
 

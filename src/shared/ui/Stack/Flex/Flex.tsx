@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { PropsWithChildren } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react';
 import s from './Flex.module.css';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -32,7 +32,8 @@ const gapClasses: Record<FlexGap, string> = {
   32: s.gap32,
 };
 
-export interface FlexProps {
+export interface FlexProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   justify?: FlexJustify;
   align?: FlexAlign;

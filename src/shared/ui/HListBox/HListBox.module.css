@@ -1,0 +1,46 @@
+.HListBox {
+  position: relative;
+}
+
+.trigger {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.optionsList {
+  position: absolute;
+  z-index: 100;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px 0 var(--input-shadow);
+
+  /* width: 100%; */
+}
+
+.optionItem {
+  padding: 10px;
+  transition: var(--app-transition);
+  color: var(--color-light);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 7px;
+}
+
+.selected {
+  color: var(--color-dark);
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.optionItem:hover {
+  opacity: 0.7;
+  box-shadow: 0 0 5px 1px var(--shadow-menu-item) inset;
+  color: var(--color-dark);
+}

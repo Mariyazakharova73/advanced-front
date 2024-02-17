@@ -6,17 +6,20 @@
 MainPage -
 ProfilePage - просмотр и редактирование профиля.
 AboutPage -
-ArticlesPage - просмотр статей, комментариев, добавление комментариев.
+ArticlesPage - просмотр статей, фильтрация, сортировка, поиск
+ArticleDetailsPage - просмотр статьи, комментариев, добавление комментариев
 NotFoundPage
 
 Данные для входа - username: admin, password 123;
 
-Верстка на гридах. (без flex).
+Верстка на гридах. (без flex). Созданы некоторые UI компоненты. (Button, Input, Card, Modal, Avatar, Loader, Tabs, Text, Stack и т.д)
 Для имитации бэкенда используется JSON Server. Бандл разделен на чанки (React.lazy). Добавлена возможность смены темы (React Context, css-variables, custom hook useTheme). Реализована возможность смены языка (i18next). Настроен EsLint, Stylelint, husky. Настроена обработка ошибок (React ErrorBoundary). Настроена работа со Storybook.
 Модальное окно создано с использованием React Portal. (lazy loading modal).
 loginReducer, profileReducer, articleDetailsReducer и др. добавляются асинхронно через reducerManager (форма авторизации подгружается только для неавторизованного пользователя).
-Страницы профиля и Статей защищены от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
-Реализована возможность просмотра статей и комментариев. Также можно добавлять новые комментарии к статье.
+Страницы профиля и cтатей защищены от неавторизованного пользователя. В режиме редактирования можно изменить данные профиля.
+Реализована возможность просмотра статей (подгружаются при скролле) и комментариев. Также можно добавлять новые комментарии к статье.
+При возвращении на страницу со списком статей сохраняется позиция скролла.
+Статьи можно сортировать по дате создания, количеству просмотров, темам. Параметры сортировки сохраняются в url. Также можно осуществить поиск статьи (debounce).
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ErrorBoundary, ThemeProvider, StoreProvider, styles, types, App.tsx
@@ -41,6 +44,7 @@ shared - assets, RouteConfig, Decorators, i18n, routeConfig, Loader, Button, Mod
   <img height='25px' src="https://img.shields.io/badge/Redux Toolkit-20232A??style=plastic&logo=redux&logoColor=764ABC" alt="Redux.">
   <img height='25px' src="https://img.shields.io/badge/React Router v6-20232A??style=plastic&logo=reactrouter&logoColor=CA4245" alt="React Router.">
   <img height='25px' src="https://img.shields.io/badge/Storybook-20232A??style=plastic&logo=Storybook&logoColor=FF4785" alt="Storybook.">
+  <img height='25px' src="https://img.shields.io/badge/Headless Ui-20232A??style=plastic&logo=headlessui&logoColor=66E3FF" alt="Headless Ui.">
 </div>
 
 #### Установка и запуск приложения

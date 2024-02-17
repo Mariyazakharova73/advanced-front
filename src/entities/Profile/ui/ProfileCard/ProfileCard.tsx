@@ -3,6 +3,7 @@ import { Country, CountrySelect } from 'entities/Country';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
 import Avatar from 'shared/ui/Avatar/Avatar';
+import Card from 'shared/ui/Card/Card';
 import Input from 'shared/ui/Input/Input';
 import Loader from 'shared/ui/Loader/Loader';
 import GridStack from 'shared/ui/Stack/GridStack/GridStack';
@@ -36,60 +37,68 @@ const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <GridStack justify="center" className={cn(s.ProfileCard, className, s.loading)}>
-        <Loader />
-      </GridStack>
+      <Card className={s.wrapper}>
+        <GridStack justify="center" className={cn(s.ProfileCard, className, s.loading)}>
+          <Loader />
+        </GridStack>
+      </Card>
     );
   }
 
   if (error) {
     return (
-      <GridStack justify="center" className={cn(s.ProfileCard, className, s.error)}>
-        <Text
-          theme={TextTheme.ERROR}
-          align={TextAlign.CENTER}
-          title={t('profile-error')}
-          text={t('update-page')}
-        />
-      </GridStack>
+      <Card className={s.wrapper}>
+        <GridStack justify="center" className={cn(s.ProfileCard, className, s.error)}>
+          <Text
+            theme={TextTheme.ERROR}
+            align={TextAlign.CENTER}
+            title={t('profile-error')}
+            text={t('update-page')}
+          />
+        </GridStack>
+      </Card>
     );
   }
 
   return (
-    <div className={cn(s.ProfileCard, className)}>
-      {data?.avatar && (
-        <GridStack justify="center">
-          <Avatar src={data?.avatar} />
-        </GridStack>
-      )}
-      <GridStack direction="row" gap="8" justify="stretch">
-        {formFields.map((item: string) => {
-          return (
-            <Input
-              className={cn(s.input, className)}
-              key={item}
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              value={data ? data[item] : ''}
-              label={t(item)}
-              onChange={onChangeInput}
+    <Card className={s.wrapper}>
+      <div className={cn(s.ProfileCard, className)}>
+        {data?.avatar && (
+          <GridStack justify="center">
+            <Avatar src={data?.avatar} />
+          </GridStack>
+        )}
+        <GridStack direction="row" gap="8" justify="stretch">
+          {formFields.map((item: string) => {
+            return (
+              <Input
+                className={cn(s.input, className)}
+                key={item}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                value={data ? data[item] : ''}
+                label={t(item)}
+                onChange={onChangeInput}
+                readonly={readonly}
+                name={item}
+              />
+            );
+          })}
+          <GridStack direction="row" gap="8">
+            <CurrencySelect
               readonly={readonly}
-              name={item}
+              value={data?.currency}
+              onChange={onChangeCurrency}
             />
-          );
-        })}
-        <CurrencySelect
-          readonly={readonly}
-          value={data?.currency}
-          onChange={onChangeCurrency}
-        />
-        <CountrySelect
-          readonly={readonly}
-          value={data?.country}
-          onChange={onChangeCountry}
-        />
-      </GridStack>
-    </div>
+            <CountrySelect
+              readonly={readonly}
+              value={data?.country}
+              onChange={onChangeCountry}
+            />
+          </GridStack>
+        </GridStack>
+      </div>
+    </Card>
   );
 };
 
