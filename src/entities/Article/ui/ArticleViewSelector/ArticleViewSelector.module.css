@@ -1,10 +1,3 @@
-.ArticleViewSelector {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
-  justify-content: start;
-}
-
 .notActive svg {
   stroke: var(--color-primary-dark);
   opacity: .5;

@@ -1,7 +1,4 @@
 .Tabs {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 8px;
   cursor: pointer;
   margin-top: 10px;
 }

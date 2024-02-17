@@ -1,8 +1,5 @@
 .LoginForm {
-  display: grid;
-  gap: 15px;
   width: 400px;
-  justify-items: center;
   min-height: 232px;
 }
 

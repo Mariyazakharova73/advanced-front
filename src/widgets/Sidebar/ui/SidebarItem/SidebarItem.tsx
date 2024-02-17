@@ -1,10 +1,11 @@
+import { getUserAuthData } from 'entities/User';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import s from './SidebarItem.module.css';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import { SidebarItemType } from '../../model/types/sidebar';
+import s from './SidebarItem.module.css';
 
 export interface SidebarItemProps {
   item: SidebarItemType;
@@ -23,8 +24,10 @@ const SidebarItem = (props: SidebarItemProps) => {
 
   return (
     <AppLink className={s.link} key={item.path} theme={AppLinkTheme.LIGHT} to={item.path}>
-      <item.Icon className={s.icon} />
-      {collapsed ? null : <span className={s.text}>{t(item.text)}</span>}
+      <GridStack gap="16">
+        <item.Icon className={s.icon} />
+        {collapsed ? null : <span className={s.text}>{t(item.text)}</span>}
+      </GridStack>
     </AppLink>
   );
 };

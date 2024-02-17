@@ -6,9 +6,10 @@ import { ReactComponent as ArrowRight } from 'shared/assets/icons/arrow-right.sv
 
 import { useSelector } from 'react-redux';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import LanguageSwitcher from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
-import { getSidebarItems } from '../../../Sidebar/model/selectors/getSidebarItems';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { getSidebarItems } from '../../../Sidebar/model/selectors/getSidebarItems';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import s from './Sidebar.module.css';
 
@@ -28,16 +29,16 @@ const Sidebar: FC<SidebarProps> = props => {
 
   return (
     <menu className={cn(s.Sidebar, className, { [s.collapsed]: collapsed })}>
-      <div className={s.menLinks}>
+      <GridStack direction="row" justify="stretch" gap="8" className={s.menuLinks}>
         {sidebarItemsList.map(item => {
           return <SidebarItem key={item.path} item={item} collapsed={collapsed} />;
         })}
-      </div>
+      </GridStack>
       <div className={s.buttons}>
-        <div className={collapsed ? s.switchersCol : s.switchers}>
+        <GridStack direction="row" className={collapsed ? s.switchersCol : s.switchers}>
           <ThemeSwitcher />
           <LanguageSwitcher />
-        </div>
+        </GridStack>
         <div className={s.wrapper}>
           <Button theme={ButtonTheme.CLEAR_LIGHT} onClick={onToggle}>
             {collapsed ? <ArrowRight /> : <ArrowLeft />}

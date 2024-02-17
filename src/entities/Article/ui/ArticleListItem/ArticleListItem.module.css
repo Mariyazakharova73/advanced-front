@@ -1,6 +1,3 @@
-.ArticleListItem {
-}
-
 .card {
   width: 230px;
   transition: all 0.5s ease;
@@ -36,26 +33,11 @@
   height: 200px;
 }
 
-.infoWrapper {
-  margin-top: 8px;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .types p {
   width: 115px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.views {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 7px;
 }
 
 .icon {
@@ -110,17 +92,6 @@
 
 .footer {
   margin-top: 15px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-}
-
-.bigViews {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
-  align-items: center;
-  margin-left: auto;
 }
 
 .skBigTitle {

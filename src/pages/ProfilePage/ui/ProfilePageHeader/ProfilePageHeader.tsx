@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text from 'shared/ui/Text/Text';
 import s from './ProfilePageHeader.module.css';
 
@@ -48,7 +49,7 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
             {t('edit')}
           </Button>
         ) : (
-          <div className={s.buttonsWrapper}>
+          <GridStack justify="end" gap="8">
             <Button
               theme={ButtonTheme.PRIMARY_RED}
               onClick={onCancel}
@@ -59,7 +60,7 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
             <Button onClick={onSave} className={s.button}>
               {t('save')}
             </Button>
-          </div>
+          </GridStack>
         ))}
     </div>
   );

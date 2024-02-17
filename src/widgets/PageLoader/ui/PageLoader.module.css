@@ -2,8 +2,5 @@
   /* min-height: calc(
     100vh - var(--navbar-height) - var(--app-margin) - var(--app-margin)
   - 100px); */
-  display: grid;
-  justify-content: center;
   height: 100%;
-  align-items: center;
 }

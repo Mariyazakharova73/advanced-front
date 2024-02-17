@@ -18,21 +18,7 @@
   padding: 20px 15px;
 }
 
-.switchers {
-  display: grid;
-  justify-content: flex-start;
-}
-
-.switchersCol {
-  display: grid;
-}
-
 .wrapper {
   display: grid;
   justify-items: end;
-}
-
-.menLinks {
-  display: grid;
-  row-gap: 10px;
 }

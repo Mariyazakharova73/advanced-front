@@ -1,7 +1,4 @@
 .ArticleDetailsPageHeader {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
   margin-bottom: 20px;
 }
 

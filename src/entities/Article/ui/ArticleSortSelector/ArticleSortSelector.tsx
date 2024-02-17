@@ -1,10 +1,10 @@
 import cn from 'classnames';
-import { ArticleSortField } from '../../../Article/model/types/article';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SortOrder } from 'shared/types';
 import Select, { SelectOption } from 'shared/ui/Select/Select';
-import s from './ArticleSortSelector.module.css';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
+import { ArticleSortField } from '../../../Article/model/types/article';
 
 export interface ArticleSortSelectorProps {
   className?: string;
@@ -34,7 +34,7 @@ const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
   }, [t]);
 
   return (
-    <div className={cn(s.ArticleSortSelector, className)}>
+    <GridStack gap="16" className={cn(className)}>
       <Select<ArticleSortField>
         label={t('sort')}
         options={sortFieldOptions}
@@ -42,7 +42,7 @@ const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
         value={sort}
       />
       <Select<SortOrder> options={orderOptions} onChange={onChangeOrder} value={order} />
-    </div>
+    </GridStack>
   );
 };
 

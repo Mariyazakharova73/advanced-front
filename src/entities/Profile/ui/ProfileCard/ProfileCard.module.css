@@ -6,10 +6,8 @@
 
 .loading,
 .error {
-  display: grid;
-  justify-content: center;
   height: 200px;
-  align-items: center;
+
 }
 
 .button {
@@ -18,14 +16,4 @@
 
 .input {
   margin-top: 10px;
-}
-
-.avatarWrapper {
-  display: grid;
-  justify-content: center;
-}
-
-.inputWrapper {
-  display: grid;
-  gap: 10px;
 }

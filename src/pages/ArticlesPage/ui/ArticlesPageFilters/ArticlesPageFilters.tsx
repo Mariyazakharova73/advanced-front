@@ -15,6 +15,7 @@ import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { SortOrder } from 'shared/types';
 import Card from 'shared/ui/Card/Card';
 import Input from 'shared/ui/Input/Input';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
@@ -92,8 +93,8 @@ const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = props => {
   );
 
   return (
-    <div className={cn(s.ArticlesPageFilters, className)}>
-      <div className={s.container}>
+    <div className={cn(className)}>
+      <GridStack justify="between" gap="8">
         <ArticleSortSelector
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
@@ -101,7 +102,7 @@ const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = props => {
           order={order}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </GridStack>
       <Card className={s.search}>
         <Input placeholder={t('search')} onChange={onChangeSearch} value={search} />
       </Card>

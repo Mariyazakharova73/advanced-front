@@ -22,12 +22,6 @@
   justify-content: start;
 }
 
-.avatarWrapper {
-  display: grid;
-  width: 100%;
-  justify-content: center;
-}
-
 .icon {
   stroke: var(--color-primary);
 }

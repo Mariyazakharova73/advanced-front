@@ -8,6 +8,7 @@ import DynamicModuleLoader, {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Button from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import {
   addCommentFormActions,
@@ -44,7 +45,12 @@ const AddCommentForm: FC<AddCommentsFormProps> = ({ className, onSendComment }) 
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={cn(s.AddCommentForm, className)}>
+      <GridStack
+        direction="row"
+        gap="16"
+        justify="stretch"
+        className={cn(s.AddCommentForm, className)}
+      >
         <Input
           className={s.input}
           label={t('commentText')}
@@ -54,7 +60,7 @@ const AddCommentForm: FC<AddCommentsFormProps> = ({ className, onSendComment }) 
         <Button disabled={!text} className={s.bth} onClick={onSendHandler}>
           {t('sendBtn')}
         </Button>
-      </div>
+      </GridStack>
     </DynamicModuleLoader>
   );
 };

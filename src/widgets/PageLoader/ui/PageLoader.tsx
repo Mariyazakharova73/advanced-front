@@ -1,6 +1,7 @@
 import cn from 'classnames';
-import s from './PageLoader.module.css';
 import Loader from 'shared/ui/Loader/Loader';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
+import s from './PageLoader.module.css';
 
 export interface PageLoaderProps {
   className?: string;
@@ -8,9 +9,9 @@ export interface PageLoaderProps {
 
 const PageLoader = ({ className }: PageLoaderProps) => {
   return (
-    <div className={cn(s.PageLoader, className)}>
+    <GridStack justify="center" className={cn(s.PageLoader, className)}>
       <Loader />
-    </div>
+    </GridStack>
   );
 };
 

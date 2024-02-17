@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import Button from 'shared/ui/Button/Button';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import s from './ArticleDetailsPageHeader.module.css';
 
 export interface ArticleDetailsPageHeaderProps {
@@ -31,7 +32,7 @@ const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = props => {
   }, [article?.id, navigate]);
 
   return (
-    <div className={cn(s.ArticleDetailsPageHeader, className)}>
+    <GridStack gap="8" className={cn(s.ArticleDetailsPageHeader, className)}>
       <Button className={s.backBtn} onClick={onBackToList}>
         {t('back')}
       </Button>
@@ -40,7 +41,7 @@ const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = props => {
           {t('edit')}
         </Button>
       )}
-    </div>
+    </GridStack>
   );
 };
 

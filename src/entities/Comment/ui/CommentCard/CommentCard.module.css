@@ -1,26 +1,14 @@
 .CommentCard {
   padding: 10px;
-
   background-color: var(--color-bg-app);
   box-shadow: 0 5px 10px 2px var(--input-shadow);
   border-radius: var(--app-border-radius);
-}
-
-.header {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
 }
 
 .text {
   margin-top: 10px;
 }
 
-.username {
-  margin-left: 10px;
-}
 
 .loading {
   border: none

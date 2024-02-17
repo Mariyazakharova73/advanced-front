@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { ChangeEvent, FC, InputHTMLAttributes, memo } from 'react';
+import GridStack from '../Stack/GridStack/GridStack';
 import s from './Input.module.css';
 
 // value и onChange конфликтуют
@@ -41,7 +42,7 @@ const Input: FC<InputProps> = props => {
   };
 
   return (
-    <div className={cn(s.InputWrapper, className, mods)}>
+    <GridStack justify="stretch" gap="8" direction="row" className={cn(className, mods)}>
       {label && <div className={s.label}>{label}</div>}
       <input
         placeholder={placeholder}
@@ -53,7 +54,7 @@ const Input: FC<InputProps> = props => {
         onChange={onChangeHandler}
         {...otherProps}
       />
-    </div>
+    </GridStack>
   );
 };
 

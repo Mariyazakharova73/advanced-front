@@ -9,6 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Button from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
 import Loader from 'shared/ui/Loader/Loader';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { getLoginError } from '../../model/selectors/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
@@ -63,11 +64,18 @@ const LoginForm: FC<LoginFormProps> = props => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnMount>
-      <div className={cn(s.LoginForm, className)}>
+      <GridStack
+        direction="row"
+        justify="stretch"
+        gap="16"
+        className={cn(s.LoginForm, className)}
+      >
         <Text title={t('title-form')}></Text>
         {error && <Text theme={TextTheme.ERROR} text={error} />}
         {isLoading ? (
-          <Loader />
+          <GridStack justify="center">
+            <Loader />
+          </GridStack>
         ) : (
           <>
             <Input
@@ -89,7 +97,7 @@ const LoginForm: FC<LoginFormProps> = props => {
         <Button disabled={isLoading} className={s.loginBtn} onClick={onLoginClick}>
           {t('login')}
         </Button>
-      </div>
+      </GridStack>
     </DynamicModuleLoader>
   );
 };

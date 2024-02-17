@@ -16,11 +16,6 @@
   justify-items: stretch;
 }
 
-.loaderWrapper {
-  display: grid;
-  justify-content: center;
-}
-
 .text {
   margin-top: 20px;
   height: 100vh;

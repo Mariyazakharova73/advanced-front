@@ -1,12 +1,4 @@
-.SidebarItem {
-}
-
 .link {
-  display: grid;
-  justify-content: start;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 10px;
   border-radius: 10px;
   padding: 10px;
   transition: var(--app-transition);

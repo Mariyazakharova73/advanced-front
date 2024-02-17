@@ -1,12 +1,4 @@
 import cn from 'classnames';
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from '../../../Article/model/selectors/articleDetails';
-import { fetchArticleById } from '../../../Article/model/services/fetchArticleById';
-import { articleDetailsReducer } from '../../../Article/model/slice/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../../Article/model/types/article';
 import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -18,7 +10,16 @@ import DynamicModuleLoader, {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text, { TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from '../../../Article/model/selectors/articleDetails';
+import { fetchArticleById } from '../../../Article/model/services/fetchArticleById';
+import { articleDetailsReducer } from '../../../Article/model/slice/articleDetailsSlice';
+import { ArticleBlock, ArticleBlockType } from '../../../Article/model/types/article';
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -73,7 +74,7 @@ const ArticleDetails: FC<ArticleDetailsProps> = props => {
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={s.avatar} width={200} height={200} border={'50%'} />
+        <Skeleton className={s.avatar} width={100} height={100} border={'50%'} />
         <Skeleton className={s.title} width={300} height={32} />
         <Skeleton className={s.skeleton} width={600} height={24} />
         <Skeleton className={s.skeleton} width={'100%'} height={200} />
@@ -87,9 +88,9 @@ const ArticleDetails: FC<ArticleDetailsProps> = props => {
   } else {
     content = (
       <>
-        <div className={s.avatarWrapper}>
+        <GridStack justify="center" max>
           <Avatar size={100} src={article?.img} className={s.avatar} />
-        </div>
+        </GridStack>
         <Text
           className={s.title}
           title={article?.title}

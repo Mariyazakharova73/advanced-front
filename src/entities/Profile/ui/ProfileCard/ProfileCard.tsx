@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Input from 'shared/ui/Input/Input';
 import Loader from 'shared/ui/Loader/Loader';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Profile, formFields } from '../../model/types/profile';
 import s from './ProfileCard.module.css';
@@ -35,33 +36,33 @@ const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={cn(s.ProfileCard, className, s.loading)}>
+      <GridStack justify="center" className={cn(s.ProfileCard, className, s.loading)}>
         <Loader />
-      </div>
+      </GridStack>
     );
   }
 
   if (error) {
     return (
-      <div className={cn(s.ProfileCard, className, s.error)}>
+      <GridStack justify="center" className={cn(s.ProfileCard, className, s.error)}>
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
           title={t('profile-error')}
           text={t('update-page')}
         />
-      </div>
+      </GridStack>
     );
   }
 
   return (
     <div className={cn(s.ProfileCard, className)}>
       {data?.avatar && (
-        <div className={s.avatarWrapper}>
+        <GridStack justify="center">
           <Avatar src={data?.avatar} />
-        </div>
+        </GridStack>
       )}
-      <div className={s.inputWrapper}>
+      <GridStack direction="row" gap="8" justify="stretch">
         {formFields.map((item: string) => {
           return (
             <Input
@@ -87,7 +88,7 @@ const ProfileCard = (props: ProfileCardProps) => {
           value={data?.country}
           onChange={onChangeCountry}
         />
-      </div>
+      </GridStack>
     </div>
   );
 };

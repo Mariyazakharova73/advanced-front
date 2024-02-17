@@ -8,6 +8,7 @@ import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import Card from 'shared/ui/Card/Card';
 import Icon from 'shared/ui/Icon/Icon';
+import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text from 'shared/ui/Text/Text';
 import {
   Article,
@@ -56,12 +57,14 @@ const ArticleListItem = (props: ArticleListItemProps) => {
           {textBlock && (
             <ArticleTextBlockComponent className={s.textBlock} block={textBlock} />
           )}
-          <div className={s.footer}>
+          <GridStack justify="between" className={s.footer}>
             <AppLink to={RoutePath.article_details + article.id}>
               <Button theme={ButtonTheme.OUTLINE}>{t('more')}</Button>
             </AppLink>
-            <div className={s.bigViews}>{views}</div>
-          </div>
+            <GridStack gap="8" className={s.bigViews}>
+              {views}
+            </GridStack>
+          </GridStack>
         </Card>
       </div>
     );
@@ -78,10 +81,10 @@ const ArticleListItem = (props: ArticleListItemProps) => {
           <img src={article.img} className={s.img} alt={`${article.title}.`} />
           <Text text={article.createdAt} className={s.date} />
         </div>
-        <div className={s.infoWrapper}>
+        <GridStack justify="between">
           {types}
-          <div className={s.views}>{views}</div>
-        </div>
+          <GridStack gap="8">{views}</GridStack>
+        </GridStack>
         <Text text={article.title} className={s.title} />
       </Card>
     </AppLink>

@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { FC, ReactNode, useCallback } from 'react';
 import Card, { CardTheme } from '../Card/Card';
+import GridStack from '../Stack/GridStack/GridStack';
 import s from './Tabs.module.css';
 
 export interface TabItem {
@@ -30,7 +31,7 @@ const Tabs: FC<TabsProps> = props => {
   );
 
   return (
-    <div className={cn(s.Tabs, className)}>
+    <GridStack gap="8" className={cn(s.Tabs, className)} justify="stretch">
       {tabs.map(tab => {
         return (
           <Card
@@ -43,7 +44,7 @@ const Tabs: FC<TabsProps> = props => {
           </Card>
         );
       })}
-    </div>
+    </GridStack>
   );
 };
 
