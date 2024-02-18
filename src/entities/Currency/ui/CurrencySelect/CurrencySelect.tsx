@@ -41,6 +41,8 @@ const CurrencySelect: FC<CurrencySelectProps> = ({
       items={options}
       defaultValue={t('currencyLabel')}
       readonly={readonly}
+      direction="top"
+      label={t('currencyLabel')}
     />
     // <Select
     //   className={cn(className)}

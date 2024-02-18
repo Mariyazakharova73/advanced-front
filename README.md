@@ -63,7 +63,11 @@ shared - assets, RouteConfig, Decorators, i18n, routeConfig, Loader, Button, Mod
 
 Запустить проект:
 
-    npm start
+    npm run start:dev
+
+Запустить Storybook:
+
+    npm run storybook
 
 </details>
 
