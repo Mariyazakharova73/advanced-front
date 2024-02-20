@@ -6,9 +6,9 @@ import {
 } from '@reduxjs/toolkit';
 import { type AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ProfileSchema } from 'entities/Profile';
 import { type UserSchema } from 'entities/User';
 import { LoginSchema } from 'feature/AuthByUserName';
+import { ProfileSchema } from 'feature/EditableProfileCard';
 import { ScrollSaveSchema } from 'feature/ScrollSave';
 import { AddCommentFormSchema } from 'feature/addCommentForm';
 import {
@@ -16,10 +16,12 @@ import {
   ArticleRecommendationsSchema,
 } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
   user: UserSchema;
   scrollSave: ScrollSaveSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema;

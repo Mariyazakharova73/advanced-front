@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   color: var(--color-primary);
+  cursor: pointer;
 }
 
 .menu {
@@ -16,7 +17,8 @@
   position: absolute;
   z-index: 100;
   border-radius: 10px;
-  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 5px 1px var(--shadow-menu-item);
+  display: grid;
 }
 
 .menuItem {
@@ -31,4 +33,26 @@
 
 .active {
   background-color: var(--color-primary);
+  color: var(--color-light)
+}
+
+.OptionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.OptionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.OptionsTopLeft {
+  bottom: 100%;
+  right: 0;
+  
+}
+
+.OptionsTopRight {
+  bottom: 100%;
+  left: 0;
 }

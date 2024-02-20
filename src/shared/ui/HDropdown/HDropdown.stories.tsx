@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import Button from '../Button/Button';
 import HDropdown from './HDropdown';
 const meta = {
   title: 'shared/HDropdown',
@@ -15,14 +16,17 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Normal: Story = {
+  args: {
+    trigger: <Button>Open</Button>,
+    items: [{ content: 'first' }, { content: 'second' }, { content: 'third' }],
+  },
+};
+
+Normal.decorators = [ThemeDecorator(Theme.LIGHT)];
+
+export const NormalDark: Story = {
   args: {},
 };
 
-Primary.decorators = [ThemeDecorator(Theme.LIGHT)];
-
-export const PrimaryDark: Story = {
-  args: {},
-};
-
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+NormalDark.decorators = [ThemeDecorator(Theme.DARK)];

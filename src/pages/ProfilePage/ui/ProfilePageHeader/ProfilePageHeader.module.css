@@ -1,9 +1,0 @@
-.ProfilePageHeader {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-}
-
-.button {
-  margin-left: auto;
-}

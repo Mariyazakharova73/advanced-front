@@ -20,8 +20,25 @@
   /* width: 100%; */
 }
 
-.ListTop {
+.OptionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.OptionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.OptionsTopLeft {
   bottom: 100%;
+  right: 0;
+  
+}
+
+.OptionsTopRight {
+  bottom: 100%;
+  left: 0;
 }
 
 .optionItem {
@@ -45,7 +62,7 @@
 
 .optionItem:hover {
   opacity: 0.7;
-  box-shadow: 0 0 5px 1px var(--shadow-menu-item) inset;
+  box-shadow: 0 0 5px 1px var(--shadow-menu-item);
   color: var(--color-dark);
 }
 

@@ -41,7 +41,7 @@ const CountrySelect: FC<CountrySelectProps> = ({
       items={options}
       defaultValue={t('countryLabel')}
       readonly={readonly}
-      direction="top"
+      direction="topRight"
       label={t('countryLabel')}
     />
     // <Select

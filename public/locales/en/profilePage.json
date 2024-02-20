@@ -18,5 +18,6 @@
   "incorrectAge": "Incorrect Age",
   "incorrectCity": "Incorrect city",
   "incorrectUser": "Incorrect user data",
-  "noData": "No Data"
+  "noData": "No Data",
+  "notFoundProfile": "Profile not found"
 }

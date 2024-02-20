@@ -1,24 +1,63 @@
 import { Menu } from '@headlessui/react';
 import cn from 'classnames';
-import { FC, Fragment } from 'react';
+import { FC, Fragment, ReactNode } from 'react';
+import { DropdownDirection } from 'shared/types/ui';
+import AppLink from '../AppLink/AppLink';
 import s from './HDropdown.module.css';
+
+export interface DropdownItem {
+  disabled?: boolean;
+  content?: ReactNode;
+  onClick?: () => void;
+  href?: string;
+}
 
 export interface HDropdownProps {
   className?: string;
-  items?:
+  items: DropdownItem[];
+  trigger: ReactNode;
+  direction?: DropdownDirection;
 }
 
+const mapDirectionClass: Record<DropdownDirection, string> = {
+  bottomLeft: s.OptionsBottomLeft,
+  bottomRight: s.OptionsBottomRight,
+  topLeft: s.OptionsTopLeft,
+  topRight: s.OptionsTopRight,
+};
+
 const HDropdown: FC<HDropdownProps> = props => {
-  const { className } = props;
+  const { className, items, trigger, direction = 'bottomRight' } = props;
   return (
-    <Menu as="div" className={cn(className, HDropdown)}>
-      <Menu.Button className={s.btn}>More</Menu.Button>
-      <Menu.Items className={s.menu}>
-        <Menu.Item as={Fragment}>
-          {({ active }) => (
-            <li className={cn(s.menuItem, { [s.active]: active })}>Content</li>
-          )}
-        </Menu.Item>
+    <Menu as="div" className={cn(className, s.HDropdown)}>
+      <Menu.Button className={s.btn}>{trigger}</Menu.Button>
+      <Menu.Items className={cn(s.menu, mapDirectionClass[direction])}>
+        {items?.map((item, index) => {
+          const content = ({ active }: { active: boolean }) => (
+            <button
+              disabled={item.disabled}
+              type="button"
+              onClick={item.onClick}
+              className={cn(s.menuItem, { [s.active]: active })}
+            >
+              {item.content}
+            </button>
+          );
+
+          if (item.href) {
+            return (
+              <Menu.Item as={AppLink} to={item.href} key={index} disabled={item.disabled}>
+                {content}
+              </Menu.Item>
+            );
+          }
+
+          return (
+            <Menu.Item as={Fragment} key={index} disabled={item.disabled}>
+              {content}
+            </Menu.Item>
+          );
+        })}
       </Menu.Items>
     </Menu>
   );

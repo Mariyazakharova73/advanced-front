@@ -1,10 +1,4 @@
 import cn from 'classnames';
-import {
-  getProfileData,
-  getProfileReadOnly,
-  profileActions,
-  updateProfileData,
-} from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,13 +7,17 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text from 'shared/ui/Text/Text';
-import s from './ProfilePageHeader.module.css';
+import { getProfileData } from '../model/selectors/getProfileData';
+import { getProfileReadOnly } from '../model/selectors/getProfileReadOnly';
+import { updateProfileData } from '../model/services/updateProfiledata';
+import { profileActions } from '../model/slice/profileSlice';
+import s from './EditableProfileCardHeader.module.css';
 
-export interface ProfilePageHeaderProps {
+export interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
+const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = props => {
   const { t } = useTranslation('profilePage');
   const { className } = props;
   const readonly = useSelector(getProfileReadOnly);
@@ -41,7 +39,7 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
   }, [dispatch]);
 
   return (
-    <div className={cn(s.ProfilePageHeader, className)}>
+    <GridStack justify="between" className={cn(className)}>
       <Text title={t('profileTitle')} />
       {canEdit &&
         (readonly ? (
@@ -62,8 +60,8 @@ const ProfilePageHeader: FC<ProfilePageHeaderProps> = props => {
             </Button>
           </GridStack>
         ))}
-    </div>
+    </GridStack>
   );
 };
 
-export default ProfilePageHeader;
+export default EditableProfileCardHeader;

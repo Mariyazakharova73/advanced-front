@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
-const baseURL =
+export const baseURL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8000'
     : 'https://advanced-front-2etzkkd5a-mariyazakharova73s-projects.vercel.app';

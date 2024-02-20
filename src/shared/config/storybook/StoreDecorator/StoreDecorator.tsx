@@ -1,8 +1,8 @@
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'feature/AuthByUserName/model/slice/loginSlice';
+import { profileReducer } from 'feature/EditableProfileCard/model/slice/profileSlice';
 import { addCommentFormReducer } from 'feature/addCommentForm/model/slices/addCommentFormSlice';
 import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsCommentsSlice';
 import { articleRecommendationsReducer } from 'pages/ArticleDetailsPage/model/slices/articleRecommendationsSlice';

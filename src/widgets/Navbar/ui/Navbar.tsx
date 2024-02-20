@@ -8,7 +8,9 @@ import { ReactComponent as AtomIcon } from 'shared/assets/icons/atom.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
+import HDropdown from 'shared/ui/HDropdown/HDropdown';
 import s from './Navbar.module.css';
 
 export interface NavbarProps {
@@ -45,9 +47,14 @@ const Navbar = ({ className }: NavbarProps) => {
           {t('createArticle')}
         </AppLink>
         {authData ? (
-          <Button theme={ButtonTheme.OUTLINE_LIGHT} onClick={onLogout}>
-            {t('logout')}
-          </Button>
+          <HDropdown
+            direction="bottomLeft"
+            trigger={<Avatar size={30} src={authData.avatar} />}
+            items={[
+              { content: t('profile'), href: '/profile/1' },
+              { content: t('logout'), onClick: onLogout },
+            ]}
+          />
         ) : (
           <Button theme={ButtonTheme.OUTLINE_LIGHT} onClick={openAuthModal}>
             {t('login')}
