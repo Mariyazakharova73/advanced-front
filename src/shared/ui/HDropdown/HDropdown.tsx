@@ -28,6 +28,7 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
 
 const HDropdown: FC<HDropdownProps> = props => {
   const { className, items, trigger, direction = 'bottomRight' } = props;
+
   return (
     <Menu as="div" className={cn(className, s.HDropdown)}>
       <Menu.Button className={s.btn}>{trigger}</Menu.Button>

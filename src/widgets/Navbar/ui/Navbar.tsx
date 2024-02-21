@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
 import { LoginModal } from 'feature/AuthByUserName';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,8 +19,12 @@ export interface NavbarProps {
 
 const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
+
   const authData = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   const [isAuthModal, setIsAuthModal] = useState(false);
 
@@ -51,7 +55,10 @@ const Navbar = ({ className }: NavbarProps) => {
             direction="bottomLeft"
             trigger={<Avatar size={30} src={authData.avatar} />}
             items={[
-              { content: t('profile'), href: '/profile/1' },
+              ...(isAdminPanelAvailable
+                ? [{ content: t('admin'), href: RoutePath.admin_panel }]
+                : []),
+              { content: t('profile'), href: RoutePath.profile + authData.id },
               { content: t('logout'), onClick: onLogout },
             ]}
           />

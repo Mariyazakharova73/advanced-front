@@ -1,7 +1,10 @@
+import { UserRole } from 'entities/User/model/types/user';
 import { AboutPageLazy } from 'pages/AboutPage';
+import { AdminPanelPageLazy } from 'pages/AdminPanelPage';
 import { ArticleDetailsPageLazy } from 'pages/ArticleDetailsPage';
 import { ArticleEditPageLazy } from 'pages/ArticleEditPage';
 import { ArticlesPageLazy } from 'pages/ArticlesPage';
+import { ForbiddenPage } from 'pages/ForbiddenPage';
 import { MainPageLazy } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePageLazy } from 'pages/ProfilePage/ui/ProfilePage.lazy';
@@ -9,6 +12,7 @@ import { RouteProps } from 'react-router-dom';
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
+  roles?: UserRole[];
 };
 
 export enum AppRoutes {
@@ -19,6 +23,8 @@ export enum AppRoutes {
   ARTICLE_CREATE = 'article_create',
   ARTICLE_EDIT = 'article_edit',
   ARTICLE_DETAILS = 'article_details',
+  ADMIN_PANEL = 'admin_panel',
+  FORBIDDEN = 'forbidden',
   // last
   NOT_FOUND = 'not_found',
 }
@@ -31,6 +37,8 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.ARTICLE_CREATE]: '/articles/new',
   [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/', // +id
+  [AppRoutes.ADMIN_PANEL]: '/admin',
+  [AppRoutes.FORBIDDEN]: '/forbidden',
   [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -67,6 +75,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: `${RoutePath.profile}:id`,
     element: <ProfilePageLazy />,
     authOnly: true,
+  },
+  [AppRoutes.ADMIN_PANEL]: {
+    path: RoutePath.admin_panel,
+    element: <AdminPanelPageLazy />,
+    authOnly: true,
+    roles: [UserRole.MANAGER, UserRole.ADMIN],
+  },
+  [AppRoutes.FORBIDDEN]: {
+    path: RoutePath.forbidden,
+    element: <ForbiddenPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,

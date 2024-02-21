@@ -17,7 +17,7 @@ const RecommendList = ({ className }: RecommendListProps) => {
 
   const { isLoading, data: articles, error } = useArticleRecommendList(3);
 
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null;
   }
 
@@ -26,7 +26,6 @@ const RecommendList = ({ className }: RecommendListProps) => {
       <Text title={t('recomendations')} className={s.commentTitle} />
       <ArticleList
         articles={articles}
-        // isLoading={recommendationsIsLoading}
         view={ArticleView.SMALL}
         className={s.recommendations}
         target="_blank"

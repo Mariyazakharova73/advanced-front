@@ -14,5 +14,7 @@
   "articles": "Articles",
   "commentText": "Enter comment text",
   "sendBtn": "Send",
-  "editArticle": "Create article"
+  "editArticle": "Create article",
+  "admin": "Admin panel",
+  "forbidden": "You do not have access to this page"
 }

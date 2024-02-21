@@ -1160,14 +1160,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-abstract-sexy-female-avatar-png-image_2326139.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": "USER",
+      "roles": ["USER"],
+      "avatar": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
+    }
+    ,
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
     }
   ],
