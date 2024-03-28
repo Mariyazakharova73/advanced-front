@@ -5,6 +5,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { i18nDecorator } from 'shared/config/storybook/i18nDecorator/i18nDecorator';
+import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -21,6 +22,7 @@ const preview: Preview = {
     StyleDecorator,
     RouterDecorator,
     i18nDecorator,
+    SuspenseDecorator
   ],
 };
 

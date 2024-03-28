@@ -33,6 +33,7 @@
 - Сортировка статей по дате создания, количеству просмотров, темам
 - Параметры сортировки сохраняются в url
 - Поиск статьи (debounce)
+- Админ-панель
 
 <details><summary>Применен Feature-Sliced Design</summary>
 app - router, ErrorBoundary, ThemeProvider, StoreProvider, styles, types, App.tsx

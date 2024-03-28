@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HListBox } from 'shared/ui/HListBox/HListBox';
+import { HListBox } from 'shared/ui/Popups/ui/HListBox/HListBox';
 import { Currency } from '../../model/types/currency';
 
 export interface CurrencySelectProps {

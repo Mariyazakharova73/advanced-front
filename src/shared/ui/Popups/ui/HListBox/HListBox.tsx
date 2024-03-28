@@ -2,8 +2,10 @@ import { Listbox } from '@headlessui/react';
 import cn from 'classnames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import Button, { ButtonTheme } from '../Button/Button';
-import GridStack from '../Stack/GridStack/GridStack';
+import Button, { ButtonTheme } from '../../../Button/Button';
+import GridStack from '../../../Stack/GridStack/GridStack';
+import { mapDirectionClass } from '../../styles/consts';
+import popupStyles from '../../styles/popup.module.css';
 import s from './HListBox.module.css';
 
 const { Options, Option } = Listbox;
@@ -25,13 +27,6 @@ export interface HListBoxProps {
   label?: string;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  bottomLeft: s.OptionsBottomLeft,
-  bottomRight: s.OptionsBottomRight,
-  topLeft: s.OptionsTopLeft,
-  topRight: s.OptionsTopRight,
-};
-
 export function HListBox(props: HListBoxProps) {
   const {
     items,
@@ -48,7 +43,7 @@ export function HListBox(props: HListBoxProps) {
     <GridStack gap="8">
       {label && <span className={s.label}>{label}</span>}
       <Listbox
-        className={cn(s.HListBox)}
+        className={cn(popupStyles.popup)}
         as={'div'}
         onChange={onChange}
         value={value}
@@ -57,7 +52,7 @@ export function HListBox(props: HListBoxProps) {
         <Listbox.Button className={cn(s.trigger, className)} as={'div'}>
           <Button
             className={cn({
-              [s.disabled]: readonly,
+              [popupStyles.disabled]: readonly,
             })}
             theme={ButtonTheme.OUTLINE}
           >
@@ -76,7 +71,7 @@ export function HListBox(props: HListBoxProps) {
                 <li
                   className={cn(s.optionItem, {
                     [s.selected]: selected,
-                    [s.disabled]: item.disabled,
+                    [popupStyles.disabled]: item.disabled,
                   })}
                 >
                   {item.content}

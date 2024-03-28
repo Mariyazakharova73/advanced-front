@@ -2,8 +2,10 @@ import { Menu } from '@headlessui/react';
 import cn from 'classnames';
 import { FC, Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import AppLink from '../AppLink/AppLink';
+import AppLink from '../../../AppLink/AppLink';
 import s from './HDropdown.module.css';
+import { mapDirectionClass } from '../../styles/consts';
+import popupStyles from '../../styles/popup.module.css';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -19,18 +21,11 @@ export interface HDropdownProps {
   direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  bottomLeft: s.OptionsBottomLeft,
-  bottomRight: s.OptionsBottomRight,
-  topLeft: s.OptionsTopLeft,
-  topRight: s.OptionsTopRight,
-};
-
-const HDropdown: FC<HDropdownProps> = props => {
+export const HDropdown: FC<HDropdownProps> = props => {
   const { className, items, trigger, direction = 'bottomRight' } = props;
 
   return (
-    <Menu as="div" className={cn(className, s.HDropdown)}>
+    <Menu as="div" className={cn(className, popupStyles.popup)}>
       <Menu.Button className={s.btn}>{trigger}</Menu.Button>
       <Menu.Items className={cn(s.menu, mapDirectionClass[direction])}>
         {items?.map((item, index) => {
@@ -63,5 +58,3 @@ const HDropdown: FC<HDropdownProps> = props => {
     </Menu>
   );
 };
-
-export default HDropdown;

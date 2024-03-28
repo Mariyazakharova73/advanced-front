@@ -14,12 +14,6 @@ export interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
 
-  const { t } = useTranslation('profilePage');
-
-  if (!id) {
-    return <Text text={t('notFoundProfile')} />;
-  }
-
   return (
     <Page className={cn(s.ProfilePage, className)}>
       <EditableProfileCardHeader />

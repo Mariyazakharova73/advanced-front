@@ -5,12 +5,14 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ReactComponent as AtomIcon } from 'shared/assets/icons/atom.svg';
+import { ReactComponent as NotificationIcon } from 'shared/assets/icons/notification.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import HDropdown from 'shared/ui/HDropdown/HDropdown';
+import { HDropdown } from 'shared/ui/Popups/ui/HDropdown/HDropdown';
+import { HStack } from 'shared/ui/Stack';
 import s from './Navbar.module.css';
 
 export interface NavbarProps {
@@ -43,7 +45,7 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <header className={cn(s.Navbar, className)}>
       <AppLink to={RoutePath.main} theme={AppLinkTheme.DARK}>
-        <AtomIcon className={s.icon} />
+        <AtomIcon />
       </AppLink>
 
       <div className={s.links}>
@@ -51,17 +53,22 @@ const Navbar = ({ className }: NavbarProps) => {
           {t('createArticle')}
         </AppLink>
         {authData ? (
-          <HDropdown
-            direction="bottomLeft"
-            trigger={<Avatar size={30} src={authData.avatar} />}
-            items={[
-              ...(isAdminPanelAvailable
-                ? [{ content: t('admin'), href: RoutePath.admin_panel }]
-                : []),
-              { content: t('profile'), href: RoutePath.profile + authData.id },
-              { content: t('logout'), onClick: onLogout },
-            ]}
-          />
+          <HStack gap="16" className={s.actions}>
+            <Button theme={ButtonTheme.ICON}>
+              <NotificationIcon className={s.icon} />
+            </Button>
+            <HDropdown
+              direction="bottomLeft"
+              trigger={<Avatar size={30} src={authData.avatar} />}
+              items={[
+                ...(isAdminPanelAvailable
+                  ? [{ content: t('admin'), href: RoutePath.admin_panel }]
+                  : []),
+                { content: t('profile'), href: RoutePath.profile + authData.id },
+                { content: t('logout'), onClick: onLogout },
+              ]}
+            />
+          </HStack>
         ) : (
           <Button theme={ButtonTheme.OUTLINE_LIGHT} onClick={openAuthModal}>
             {t('login')}

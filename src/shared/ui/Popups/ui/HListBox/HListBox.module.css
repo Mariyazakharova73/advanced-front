@@ -1,7 +1,3 @@
-.HListBox {
-  position: relative;
-}
-
 .trigger {
   background: none;
   outline: none;
@@ -20,27 +16,6 @@
   /* width: 100%; */
 }
 
-.OptionsBottomLeft {
-  top: 100%;
-  right: 0;
-}
-
-.OptionsBottomRight {
-  top: 100%;
-  left: 0;
-}
-
-.OptionsTopLeft {
-  bottom: 100%;
-  right: 0;
-  
-}
-
-.OptionsTopRight {
-  bottom: 100%;
-  left: 0;
-}
-
 .optionItem {
   padding: 10px;
   transition: var(--app-transition);
@@ -48,16 +23,12 @@
   border-radius: 10px;
   overflow: hidden;
   margin: 7px;
+  cursor: pointer;
 }
 
 .selected {
   color: var(--color-dark);
   text-decoration: underline;
-}
-
-.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .optionItem:hover {

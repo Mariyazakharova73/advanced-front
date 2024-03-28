@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import MainPage from './MainPage';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import ArticleDetailsComments from './ArticleDetailsComments';
 
 const meta = {
-  title: 'pages/MainPage',
-  component: MainPage,
+  title: 'pages/ArticleDetailsComments',
+  component: ArticleDetailsComments,
 
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta<typeof MainPage>;
+} as Meta<typeof ArticleDetailsComments>;
 
 export default meta;
 

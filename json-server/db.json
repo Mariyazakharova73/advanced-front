@@ -1065,76 +1065,10 @@
       "userId": "1"
     },
     {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "ииии",
-      "id": "Tdy2BK2"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "пппп",
-      "id": "V-uEECE"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "ннн",
-      "id": "5mKAIcy"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "",
-      "id": "ztKcPrX"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "",
-      "id": "VceZoq1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "",
-      "id": "sPbOhF3"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": ",.,,,",
-      "id": "CjzsMzE"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "rrrrrrr",
-      "id": "iQg5jnh"
-    },
-    {
       "articleId": "2",
       "userId": "1",
       "text": "jjjj",
       "id": "VzAc2PG"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "jjjj",
-      "id": "LBXHGmn"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "hhhh",
-      "id": "T2yPgsF"
     },
     {
       "articleId": "5",
@@ -1149,10 +1083,10 @@
       "id": "KBv6CY0"
     },
     {
-      "articleId": "2",
+      "articleId": "19",
       "userId": "1",
-      "text": "oooo",
-      "id": "FVpcY9F"
+      "text": "kkk",
+      "id": "M9PVE7O"
     }
   ],
   "users": [
@@ -1160,29 +1094,34 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://png.pngtree.com/png-clipart/20200819/ourlarge/pngtree-abstract-sexy-female-avatar-png-image_2326139.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
-    }
-    ,
+    },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Mary",
+      "first": "Marykkk",
       "lastname": "React",
       "age": "29",
       "currency": "EUR",

@@ -1,0 +1,30 @@
+.popup {
+  position: relative;
+}
+
+.OptionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.OptionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.OptionsTopLeft {
+  bottom: 100%;
+  right: 0;
+  
+}
+
+.OptionsTopRight {
+  bottom: 100%;
+  left: 0;
+}
+
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

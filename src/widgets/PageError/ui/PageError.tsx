@@ -17,7 +17,12 @@ const PageError: FC<PageErrorProps> = ({ className }) => {
   };
 
   return (
-    <GridStack justify="center" className={cn(s.PageError, className)}>
+    <GridStack
+      direction="row"
+      justify="center"
+      gap="16"
+      className={cn(s.PageError, className)}
+    >
       <p>{t('error')}</p>
       <Button onClick={reloadPage}>{t('update-page')}</Button>
     </GridStack>

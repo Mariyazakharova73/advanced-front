@@ -27,7 +27,7 @@ import s from './ArticleDetails.module.css';
 
 export interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const initialReducers: ReducerList = {

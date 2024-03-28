@@ -8,6 +8,13 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [
+    Story => (
+      <div style={{ padding: '100px' }}>
+        <Story />
+      </div>
+    ),
+  ],
   args: {},
 } as Meta<typeof CountrySelect>;
 

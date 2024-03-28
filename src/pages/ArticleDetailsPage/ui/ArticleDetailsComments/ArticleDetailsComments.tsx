@@ -15,7 +15,7 @@ import s from './ArticleDetailsComments.module.css';
 
 export interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = props => {

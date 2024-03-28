@@ -22,7 +22,7 @@ import { ValidateProfileError } from '../model/types/profile';
 
 export interface EditableProfileCardProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const EditableProfileCard = ({ className, id }: EditableProfileCardProps) => {

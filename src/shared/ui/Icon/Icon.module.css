@@ -1,3 +1,11 @@
 .Icon {
   stroke: var(--color-primary);
+
+  /* fill: var(--color-primary); */
+}
+
+.inverted {
+  stroke: var(--color-primary-dark);
+
+  /* fill: var(--color-primary-dark); */
 }

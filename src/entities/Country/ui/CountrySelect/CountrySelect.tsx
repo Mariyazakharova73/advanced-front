@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HListBox } from 'shared/ui/HListBox/HListBox';
+import { HListBox } from 'shared/ui/Popups/ui/HListBox/HListBox';
 import { Country } from '../../model/types/country';
 
 export interface CountrySelectProps {
@@ -44,15 +44,6 @@ const CountrySelect: FC<CountrySelectProps> = ({
       direction="topRight"
       label={t('countryLabel')}
     />
-    // <Select
-    //   className={cn(className)}
-    //   label={t('countryLabel')}
-    //   options={options}
-    //   value={value}
-    //   onChange={onChangeHandler}
-    //   readonly={readonly}
-    //   // onChange={onChange}
-    // />
   );
 };
 

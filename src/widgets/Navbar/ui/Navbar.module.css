@@ -24,9 +24,10 @@
 
 .icon {
   transition: var(--app-transition);
-  stroke: var(--color-link);
+  fill: var(--color-dark);
 }
 
 .icon:hover {
-  stroke: var(--color-link-secondary);
+  transition: var(--app-transition);
+  fill: var(--color-light);
 }
