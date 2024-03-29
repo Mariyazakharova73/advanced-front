@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HListBox } from 'shared/ui/Popups/ui/HListBox/HListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Country } from '../../model/types/country';
 
 export interface CountrySelectProps {
@@ -34,7 +34,7 @@ const CountrySelect: FC<CountrySelectProps> = ({
   );
 
   return (
-    <HListBox
+    <ListBox
       className={cn(className)}
       onChange={onChangeHandler}
       value={value}

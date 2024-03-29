@@ -2,16 +2,20 @@
   color: var(--color-primary);
 }
 
+.dark {
+  color: var(--color-text);
+}
+
+.error {
+  color: var(--color-error);
+}
+
 .title {
   font: var(--font-l);
 }
 
 .text {
   font: var(--font-m);
-}
-
-.error {
-  color: var(--color-error);
 }
 
 .left {

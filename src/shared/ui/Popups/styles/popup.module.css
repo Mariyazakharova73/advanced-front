@@ -28,3 +28,14 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+

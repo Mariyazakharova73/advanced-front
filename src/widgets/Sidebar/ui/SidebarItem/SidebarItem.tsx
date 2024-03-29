@@ -23,7 +23,12 @@ const SidebarItem = (props: SidebarItemProps) => {
   }
 
   return (
-    <AppLink className={s.link} key={item.path} theme={AppLinkTheme.LIGHT} to={item.path}>
+    <AppLink
+      className={s.link}
+      key={item.path}
+      theme={AppLinkTheme.MENUITEM}
+      to={item.path}
+    >
       <GridStack gap="16">
         <item.Icon className={s.icon} />
         {collapsed ? null : <span className={s.text}>{t(item.text)}</span>}

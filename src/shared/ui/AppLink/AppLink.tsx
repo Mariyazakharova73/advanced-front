@@ -7,6 +7,7 @@ export enum AppLinkTheme {
   PRIMARY = 'primary',
   LIGHT = 'light',
   DARK = 'dark',
+  MENUITEM = 'menuItem',
 }
 
 export interface AppLinkProps extends LinkProps {
@@ -15,14 +16,15 @@ export interface AppLinkProps extends LinkProps {
 }
 
 const AppLink = (props: PropsWithChildren<AppLinkProps>) => {
-  const { to, className, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
+  const { to, className, children, theme = AppLinkTheme.LIGHT, ...otherProps } = props;
 
   const { pathname } = useLocation();
 
-  const mods = { [s.linkActive]: to === pathname };
+  const mods = {
+    [theme === AppLinkTheme.MENUITEM ? s.menuItemActive : s.linkActive]: to === pathname,
+  };
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <Link to={to} className={cn(s.AppLink, className, s[theme], mods)} {...otherProps}>
       {children}
     </Link>

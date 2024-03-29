@@ -48,7 +48,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
         <Card className={s.bigCard}>
           <div className={s.header}>
             <Avatar size={30} src={article.img} />
-            <Text text={article.user?.username || 'username'} className={s.username} />
+            <Text text={article.user?.username || 'username'} className={s.username}/>
             <Text text={article.createdAt} className={s.dateBig} />
           </div>
           <Text text={article.title} className={s.title} />

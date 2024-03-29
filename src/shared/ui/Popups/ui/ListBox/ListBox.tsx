@@ -1,4 +1,4 @@
-import { Listbox } from '@headlessui/react';
+import { Listbox as HListBox } from '@headlessui/react';
 import cn from 'classnames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
@@ -6,9 +6,9 @@ import Button, { ButtonTheme } from '../../../Button/Button';
 import GridStack from '../../../Stack/GridStack/GridStack';
 import { mapDirectionClass } from '../../styles/consts';
 import popupStyles from '../../styles/popup.module.css';
-import s from './HListBox.module.css';
+import s from './ListBox.module.css';
 
-const { Options, Option } = Listbox;
+const { Options, Option } = HListBox;
 
 export interface ListBoxItem {
   value: string;
@@ -16,7 +16,7 @@ export interface ListBoxItem {
   disabled?: boolean;
 }
 
-export interface HListBoxProps {
+export interface ListBoxProps {
   items?: ListBoxItem[];
   className?: string;
   value?: string;
@@ -27,7 +27,7 @@ export interface HListBoxProps {
   label?: string;
 }
 
-export function HListBox(props: HListBoxProps) {
+export function ListBox(props: ListBoxProps) {
   const {
     items,
     className,
@@ -42,14 +42,14 @@ export function HListBox(props: HListBoxProps) {
   return (
     <GridStack gap="8">
       {label && <span className={s.label}>{label}</span>}
-      <Listbox
+      <HListBox
         className={cn(popupStyles.popup)}
         as={'div'}
         onChange={onChange}
         value={value}
         disabled={readonly}
       >
-        <Listbox.Button className={cn(s.trigger, className)} as={'div'}>
+        <HListBox.Button className={cn(s.trigger, className)} as={'div'}>
           <Button
             className={cn({
               [popupStyles.disabled]: readonly,
@@ -58,7 +58,7 @@ export function HListBox(props: HListBoxProps) {
           >
             {value || defaultValue}
           </Button>
-        </Listbox.Button>
+        </HListBox.Button>
         <Options className={cn(s.optionsList, mapDirectionClass[direction])}>
           {items?.map(item => (
             <Option
@@ -80,7 +80,7 @@ export function HListBox(props: HListBoxProps) {
             </Option>
           ))}
         </Options>
-      </Listbox>
+      </HListBox>
     </GridStack>
   );
 }

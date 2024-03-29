@@ -2,15 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import Button from '../../../Button/Button';
-import { HDropdown } from './HDropdown';
+import { Dropdown } from './Dropdown';
 const meta = {
   title: 'shared/HDropdown',
-  component: HDropdown,
+  component: Dropdown,
 
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta<typeof HDropdown>;
+} as Meta<typeof Dropdown>;
 
 export default meta;
 

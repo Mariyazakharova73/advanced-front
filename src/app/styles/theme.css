@@ -9,12 +9,13 @@
   --color-dark: #000;
 
   --shadow-menu-item: rgba(185 212 231 / 0.7);
+  --color-link-active: rgba(0 0 0 / 0.1);
 
   /* --overlay-color: rgba(0 0 0 / 0.6); */
 }
 
 .app_light_theme {
-  --color-text: #000;
+  --color-text: rgba(0 0 0 / 0.88);
   --color-bg: #e1e3e6;
   --color-bg-app: #fff;
 
@@ -23,7 +24,7 @@
 }
 
 .app_dark_theme {
-  --color-text: #e8e8ea;
+  --color-text: var(--color-primary);
   --color-bg: #302f2f;
   --color-bg-app: #000;
   --color-shadow: rgba(248 248 252 / 0.9);

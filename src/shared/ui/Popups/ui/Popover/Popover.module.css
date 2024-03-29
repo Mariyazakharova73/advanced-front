@@ -1,0 +1,12 @@
+.Popover {
+}
+
+.panel {
+  padding: 15px;
+  background: var(--color-bg-app);
+  position: absolute;
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px var(--shadow-menu-item);
+  display: grid;
+}

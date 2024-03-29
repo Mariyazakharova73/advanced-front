@@ -97,14 +97,16 @@ const ArticleDetails: FC<ArticleDetailsProps> = props => {
           text={article?.subtitle}
           size={TextSize.L}
         />
-        <div className={s.articleInfo}>
-          <EyeIcon className={s.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={s.articleInfo}>
-          <DateIcon className={s.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+        <GridStack gap="16">
+          <div className={s.articleInfo}>
+            <DateIcon className={s.icon} />
+            <Text text={article?.createdAt} />
+          </div>
+          <div className={s.articleInfo}>
+            <EyeIcon className={s.icon} />
+            <Text text={String(article?.views)} />
+          </div>
+        </GridStack>
         {article?.blocks.map(renderBlock)}
       </>
     );

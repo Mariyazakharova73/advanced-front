@@ -28,7 +28,7 @@ const article: Article = {
   createdAt: '06.02.2019',
   userId: '1',
   user: { id: '1', username: 'test' },
-  type: [ArticleType.IT],
+  type: [ArticleType.JS],
   blocks: [
     {
       id: '1',

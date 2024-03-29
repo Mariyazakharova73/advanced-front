@@ -1,15 +1,23 @@
 .AppLink {
-  color: var(--color-link);
+  color: var(--color-light);
   text-decoration: none;
   transition: var(--app-transition);
 }
 
 .linkActive {
-  text-decoration: underline;
+  color: var(--color-dark);
+}
+
+.menuItemActive {
+  background-color: var(--color-link-active);
 }
 
 .AppLink:hover {
   opacity: 0.7;
+}
+
+.light {
+  color: var(--color-light);
 }
 
 .primary {
@@ -35,15 +43,26 @@
   stroke: var(--color-dark);
 }
 
+.menuItem svg {
+  transition: var(--app-transition);
+  fill: var(--color-light);
+  stroke: var(--color-light);
+}
+
 .dark svg:hover {
   transition: var(--app-transition);
   stroke: var(--color-light);
 }
 
-.light {
+.menuItem {
+  transition: var(--app-transition);
   color: var(--color-light);
 }
 
-.light:hover {
-  color: var(--color-primary-dark);
+.menuItem:hover {
+  background-color: var(--color-link-active);
+}
+
+.menuItem svg:hover {
+  transition: var(--app-transition);
 }

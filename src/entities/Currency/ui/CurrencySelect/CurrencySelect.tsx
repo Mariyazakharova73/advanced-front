@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { memo, useCallback, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HListBox } from 'shared/ui/Popups/ui/HListBox/HListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Currency } from '../../model/types/currency';
 
 export interface CurrencySelectProps {
@@ -34,7 +34,7 @@ const CurrencySelect: FC<CurrencySelectProps> = ({
   );
 
   return (
-    <HListBox
+    <ListBox
       className={cn(className)}
       onChange={onChangeHandler}
       value={value}

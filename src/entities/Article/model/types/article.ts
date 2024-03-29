@@ -32,9 +32,11 @@ export enum ArticleBlockType {
 
 export enum ArticleType {
   ALL = 'ALL',
-  IT = 'IT',
-  SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS',
+  JS = 'JS',
+  REACT = 'REACT',
+  TS = 'TS',
+  HTML = 'HTML',
+  CSS = 'CSS',
 }
 
 export interface ArticleBlockBase {

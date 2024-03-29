@@ -1,8 +1,8 @@
 import cn from 'classnames';
-import { ArticleType } from '../../../Article/model/types//article';
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs';
+import { ArticleType } from '../../../Article/model/types//article';
 
 export interface ArtcleTypeTabsProps {
   className?: string;
@@ -18,9 +18,11 @@ const ArtcleTypeTabs: FC<ArtcleTypeTabsProps> = props => {
   const typeTabs = useMemo<TabItem[]>(() => {
     return [
       { value: ArticleType.ALL, content: t('all') },
-      { value: ArticleType.ECONOMICS, content: t('economics') },
-      { value: ArticleType.SCIENCE, content: t('science') },
-      { value: ArticleType.IT, content: t('it') },
+      { value: ArticleType.JS, content: t('js') },
+      { value: ArticleType.TS, content: t('ts') },
+      { value: ArticleType.REACT, content: t('react') },
+      { value: ArticleType.HTML, content: t('html') },
+      { value: ArticleType.CSS, content: t('css') },
     ];
   }, [t]);
 

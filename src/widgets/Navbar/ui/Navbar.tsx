@@ -11,7 +11,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import { HDropdown } from 'shared/ui/Popups/ui/HDropdown/HDropdown';
+import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
+import { Popover } from 'shared/ui/Popups/ui/Popover/Popover';
 import { HStack } from 'shared/ui/Stack';
 import s from './Navbar.module.css';
 
@@ -49,15 +50,21 @@ const Navbar = ({ className }: NavbarProps) => {
       </AppLink>
 
       <div className={s.links}>
-        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.LIGHT}>
-          {t('createArticle')}
-        </AppLink>
+        <AppLink to={RoutePath.article_create}>{t('createArticle')}</AppLink>
         {authData ? (
           <HStack gap="16" className={s.actions}>
-            <Button theme={ButtonTheme.ICON}>
-              <NotificationIcon className={s.icon} />
-            </Button>
-            <HDropdown
+            <Popover
+              direction="bottomLeft"
+              trigger={
+                <Button theme={ButtonTheme.ICON}>
+                  <NotificationIcon className={s.icon} />
+                </Button>
+              }
+            >
+              hjklbbbbbbbbbbbbb
+            </Popover>
+
+            <Dropdown
               direction="bottomLeft"
               trigger={<Avatar size={30} src={authData.avatar} />}
               items={[

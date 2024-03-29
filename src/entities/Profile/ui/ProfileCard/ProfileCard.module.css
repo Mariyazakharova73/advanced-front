@@ -1,6 +1,5 @@
 .ProfileCard {
   padding: var(--app-padding);
-  border: 2px solid var(--color-primary);
   border-radius: var(--app-border-radius);
 }
 

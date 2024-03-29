@@ -68,7 +68,7 @@ const ProfileCard = (props: ProfileCardProps) => {
             <Avatar src={data?.avatar} />
           </GridStack>
         )}
-        <GridStack direction="row" gap="8" justify="stretch">
+        <GridStack direction="row" gap="4" justify="stretch">
           {formFields.map((item: string) => {
             return (
               <Input

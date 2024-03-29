@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { HListBox } from './HListBox';
+import { ListBox } from './ListBox';
 const meta = {
   title: 'shared/HListBox',
-  component: HListBox,
+  component: ListBox,
 
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -16,7 +16,7 @@ const meta = {
       </div>
     ),
   ],
-} as Meta<typeof HListBox>;
+} as Meta<typeof ListBox>;
 
 export default meta;
 

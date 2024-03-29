@@ -4,6 +4,7 @@ import s from './Text.module.css';
 
 export enum TextTheme {
   PRIMARY = 'primary',
+  DARK = 'dark',
   ERROR = 'error',
 }
 
@@ -41,12 +42,12 @@ const Text: FC<TextProps> = props => {
     className,
     title,
     text,
-    theme = TextTheme.PRIMARY,
+    theme = TextTheme.DARK,
     align = TextAlign.LEFT,
     size = TextSize.M,
   } = props;
 
-  const HeaderTag = mapSizeToHeaderTag[size]
+  const HeaderTag = mapSizeToHeaderTag[size];
 
   return (
     <div className={cn(s.Text, className, s[theme], s[align], s[size])}>
