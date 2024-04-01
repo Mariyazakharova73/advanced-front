@@ -1,0 +1,20 @@
+.NotificationButton {
+  width: 100%;
+}
+
+.icon {
+  transition: var(--app-transition);
+  fill: var(--color-dark);
+}
+
+.icon:hover {
+  transition: var(--app-transition);
+  fill: var(--color-light);
+}
+
+.notifications {
+  min-height: 150px;
+  max-height: 300px;
+  width: 300px;
+  overflow-y: auto;
+}

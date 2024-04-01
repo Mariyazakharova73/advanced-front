@@ -21,13 +21,3 @@
   grid-auto-flow: column;
   align-items: center;
 }
-
-.icon {
-  transition: var(--app-transition);
-  fill: var(--color-dark);
-}
-
-.icon:hover {
-  transition: var(--app-transition);
-  fill: var(--color-light);
-}

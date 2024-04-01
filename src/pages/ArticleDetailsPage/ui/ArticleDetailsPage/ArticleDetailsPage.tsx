@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import { ArticleDetails } from 'entities/Article';
-import RecommendList from 'feature/RecommendList/ui/RecommendList';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
@@ -13,6 +12,7 @@ import { articleRecommendationsReducer } from '../../model/slices/articleRecomme
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import s from './ArticleDetailsPage.module.css';
+import { RecommendList } from 'feature/recommendList';
 
 export interface ArticleDetailsPageProps {
   className?: string;

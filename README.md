@@ -6,6 +6,7 @@
   <img height='25px' src="https://img.shields.io/badge/React-20232A??style=plastic&logo=react&logoColor=61DAFB" alt="React.">
   <img height='25px' src="https://img.shields.io/badge/TypeScript-20232A??style=plastic&logo=typescript&logoColor=3178C6" alt="TypeScript.">
   <img height='25px' src="https://img.shields.io/badge/Redux Toolkit-20232A??style=plastic&logo=redux&logoColor=764ABC" alt="Redux.">
+  <img height='25px' src="https://img.shields.io/badge/RTK Query-20232A??style=plastic&logoColor=764ABC" alt="RTK Query.">
   <img height='25px' src="https://img.shields.io/badge/React Router v6-20232A??style=plastic&logo=reactrouter&logoColor=CA4245" alt="React Router.">
   <img height='25px' src="https://img.shields.io/badge/Storybook-20232A??style=plastic&logo=Storybook&logoColor=FF4785" alt="Storybook.">
   <img height='25px' src="https://img.shields.io/badge/Headless Ui-20232A??style=plastic&logo=headlessui&logoColor=66E3FF" alt="Headless Ui.">

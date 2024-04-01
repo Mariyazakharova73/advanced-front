@@ -740,5 +740,25 @@
       "username": "user",
       "avatar": "https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/02/17/10/homersimpson1702a.jpg?width=1200"
     }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": 2,
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": 3,
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    }
   ]
 }
