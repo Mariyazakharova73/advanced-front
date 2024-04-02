@@ -1,15 +1,12 @@
-.Modal {
-  position: fixed;
+.Overlay {
+  background: var(--overlay-color);
   display: grid;
   align-content: center;
   justify-items: center;
-  
-  /* top, right, left, bottom 0 */
+  position: fixed;
   inset: 0;
-  color: var(--color-primary);
-  opacity: 0;
-  pointer-events: none;
   z-index: -1;
+  cursor: pointer;
 }
 
 .content {

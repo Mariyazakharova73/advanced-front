@@ -8,6 +8,7 @@ import {
   useState,
 } from 'react';
 import Portal from '../../../ui/Portal/Portal';
+import Overlay from '../../Overlay/Overlay';
 import s from './Modal.module.css';
 
 export interface ModalProps {
@@ -39,10 +40,6 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
     }
   }, [onClose]);
 
-  const onContentClick = (e: MouseEvent<HTMLDivElement>): void => {
-    e.stopPropagation();
-  };
-
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -51,11 +48,6 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
     },
     [closeHandler],
   );
-
-  const mods: Record<string, boolean> = {
-    [s.opened]: isOpen,
-    [s.isClosing]: isClosing,
-  };
 
   useEffect(() => {
     if (isOpen) {
@@ -74,6 +66,11 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
     };
   }, [isOpen, onKeyDown]);
 
+  const mods: Record<string, boolean> = {
+    [s.opened]: isOpen,
+    [s.isClosing]: isClosing,
+  };
+
   if (lazy && !isMounted) {
     return null;
   }
@@ -81,25 +78,9 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
   return (
     <Portal>
       <div className={cn(s.Modal, className, mods)}>
-        <div
-          className={s.overlay}
-          onClick={closeHandler}
-          role="button"
-          tabIndex={0}
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          onKeyDown={onKeyDown}
-        >
-          <div
-            className={s.content}
-            role="button"
-            tabIndex={0}
-            onClick={onContentClick}
-            // eslint-disable-next-line no-console
-            onKeyDown={() => console.log('test')}
-          >
-            {children}
-          </div>
+        <Overlay onClick={closeHandler} />
+        <div className={s.content} role="button" tabIndex={0}>
+          {children}
         </div>
       </div>
     </Portal>
