@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import s from './Overlay.module.css';
+import { memo } from 'react';
 
 export interface OverlayProps {
   className?: string;
@@ -14,4 +15,4 @@ const Overlay = (props: OverlayProps) => {
   );
 };
 
-export default Overlay;
+export default memo(Overlay);

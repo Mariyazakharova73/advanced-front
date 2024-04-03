@@ -41,6 +41,6 @@
   z-index: var(--modal-z-index);
 }
 
-.opened content{
+.opened .content {
   transform: translateY(0%);
 }

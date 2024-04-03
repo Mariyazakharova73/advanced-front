@@ -30,7 +30,7 @@ const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
     return null;
   }
 
-  return (
+  return ( 
     <Dropdown
       className={cn(s.AvatarDropdown, className)}
       direction="bottomLeft"
