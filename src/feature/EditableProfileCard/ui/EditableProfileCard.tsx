@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { getProfileError } from '../model/selectors/getProfileError';

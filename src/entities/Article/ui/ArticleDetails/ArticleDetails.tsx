@@ -7,7 +7,7 @@ import { ReactComponent as EyeIcon } from 'shared/assets/icons/eye.svg';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
 import GridStack from 'shared/ui/Stack/GridStack/GridStack';

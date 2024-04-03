@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import Button from 'shared/ui/Button/Button';
 import Input from 'shared/ui/Input/Input';
 import GridStack from 'shared/ui/Stack/GridStack/GridStack';

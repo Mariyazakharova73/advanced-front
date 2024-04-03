@@ -5,7 +5,7 @@ import { getScrollByPath } from 'feature/ScrollSave/model/selectors/scrollSave';
 import { MutableRefObject, PropsWithChildren, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useThrottle } from 'shared/lib/hooks/useTrottle';

@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import DynamicModuleLoader, {
   ReducerList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import Page from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage';

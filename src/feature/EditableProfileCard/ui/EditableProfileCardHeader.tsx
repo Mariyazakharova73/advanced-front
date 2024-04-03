@@ -3,7 +3,7 @@ import { getUserAuthData } from 'entities/User';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import GridStack from 'shared/ui/Stack/GridStack/GridStack';
 import Text from 'shared/ui/Text/Text';

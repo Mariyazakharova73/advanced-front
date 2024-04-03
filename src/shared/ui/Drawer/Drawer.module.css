@@ -44,3 +44,7 @@
 .opened .content {
   transform: translateY(0%);
 }
+
+.isClosing .content {
+  transform: translateY(100%);
+}
