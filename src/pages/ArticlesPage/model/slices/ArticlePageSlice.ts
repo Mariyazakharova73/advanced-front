@@ -15,9 +15,12 @@ const articlesAdapter = createEntityAdapter<Article, EntityId>({
   selectId: (article: Article) => article.id,
 });
 
+export const selectArticlesPage = (state: StateSchema) =>
+  state.ArticlesPage || articlesAdapter.getInitialState();
+
 // Селекторы
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state: StateSchema) => state.ArticlesPage || articlesAdapter.getInitialState(),
+  (state: StateSchema) => selectArticlesPage(state),
 );
 
 const ArticlePageSlice = createSlice({

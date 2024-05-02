@@ -16,6 +16,7 @@ export interface DrawerProps {
 
 const Drawer = (props: DrawerProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
+
   const { theme } = useTheme();
 
   const { isClosing, isMounted, close } = useModal({

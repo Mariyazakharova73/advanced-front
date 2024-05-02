@@ -36,21 +36,6 @@
 - Поиск статьи (debounce)
 - Админ-панель
 
-<details><summary>Применен Feature-Sliced Design</summary>
-app - router, ErrorBoundary, ThemeProvider, StoreProvider, styles, types, App.tsx
-
-pages - AboutPage, MainPage, NotFoundPage
-
-widgets - Navbar, SideBar, ThemeSwitcher, LanguageSwitcher, PageLoader, PageError
-
-feautures - AuthByUsername
-
-entities - User
-
-shared - assets, RouteConfig, Decorators, i18n, routeConfig, Loader, Button, Modal, Portal, AppLink, hooks, api
-
-</details>
-
 #### Установка и запуск приложения
 
 <details><summary><b>Развернуть</b></summary>
